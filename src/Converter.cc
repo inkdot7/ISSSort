@@ -1,5 +1,31 @@
 #include "Converter.hh"
 
+int in_asic_block = 0;
+
+struct backwards
+{
+  long unsigned _prev;
+  long signed   _max_neg;
+  long unsigned _seen;
+
+  void value_seen(long unsigned value)
+  {
+    long signed int backwards = _prev - value;
+
+    if (backwards > _max_neg)
+      _max_neg = backwards;
+
+    _prev = value;
+    _seen++;
+  }
+};
+
+backwards _backwards_info[2 /* 0=caen,1=asic */][0x10/*code*/][0x40/*mod_id*/];
+
+backwards _backwards_asic[0x40 /* mod_id */][0x10 /* asic */];
+
+backwards _backwards_asic_ch[0x40 /* mod_id */][0x10 /* asic */][0x80 /* ch_id */];
+
 ISSConverter::ISSConverter( ISSSettings *myset ) {
 
 	// We need to do initialise, but only after Settings are added
@@ -575,6 +601,11 @@ void ISSConverter::ProcessBlockHeader( unsigned long nblock ){
 	}
 	
 	//std::cout << nblock << "\t" << header_DataLen << std::endl;
+
+	if (header_DataEndian == 1)
+	  in_asic_block = 1;
+	else
+	  in_asic_block = 0;
 	
 	return;
 	
@@ -771,7 +802,19 @@ void ISSConverter::ProcessASICData(){
 	
 	// reconstruct time stamp= HSB+MSB+LSB
 	my_tm_stp = ( my_tm_stp_hsb << 48 ) | ( my_tm_stp_msb_asic << 28 ) | my_tm_stp_lsb;
-	
+
+	unsigned long tm_stp_hi = ( my_tm_stp_hsb << 20 ) | ( my_tm_stp_msb_asic );
+
+	backwards *bi = &_backwards_asic[my_mod_id][my_asic_id];
+
+	bi->value_seen(tm_stp_hi);
+
+	backwards *bi_ch = &_backwards_asic_ch[my_mod_id][my_asic_id][my_ch_id];
+
+	bi_ch->value_seen(tm_stp_hi);
+
+	/* printf ("%lu\n", tm_stp_hi); */
+
 	// Pulser in a spare n-side channel should be counted as info data
 	if( my_asic_id == set->GetArrayPulserAsic() &&
 		my_ch_id == set->GetArrayPulserChannel() ) {
@@ -1125,7 +1168,12 @@ void ISSConverter::ProcessInfoData(){
 		my_tm_stp_hsb = my_info_field & 0x0000FFFF;
 
 	}
-	
+
+
+	backwards *bi = &_backwards_info[in_asic_block][my_info_code][my_mod_id];
+
+	bi->value_seen(my_info_field);
+
 	// MSB of timestamp in sync pulse or CAEN extended time stamp
 	if( my_info_code == set->GetSyncCode() ) {
 		
@@ -1352,6 +1400,95 @@ int ISSConverter::ConvertFile( std::string input_file_name,
 	// Print time
 	//std::cout << "Last time stamp in file = " << my_tm_stp << std::endl;
 	
+	for (int asic = 0; asic < 2; asic++)
+	  {
+	    printf ("b_info === %s ===\n", asic ? "ASIC" : "CAEN");
+	    for (int mod_id = 0; mod_id < 0x40; mod_id++)
+	      {
+		int any = 0;
+
+		for (int code = 0; code < 0x10; code++)
+		  any |= (_backwards_info[asic][code][mod_id]._seen != 0);
+
+		if (any)
+		  {
+		    printf ("b_info %2d: ", mod_id);
+
+		    for (int code = 0; code < 0x10; code++)
+		      {
+			if (_backwards_info[asic][code][mod_id]._seen)
+			  printf ("%4d",(int) _backwards_info[asic][code][mod_id]._max_neg);
+			else
+			  printf ("%4s","-");
+		      }
+		    printf ("\n");
+		  }
+	      }
+	  }
+
+	for (int mod_id = 0; mod_id < 0x40; mod_id++)
+	  {
+	    int any_asic = 0;
+
+	    for (int asic_id = 0; asic_id < 0x10; asic_id++)
+	      any_asic |= (_backwards_asic[mod_id][asic_id]._seen != 0);
+
+	    if (any_asic)
+	      {
+		printf ("b_asic === ASIC mod_id=%d ===\n", mod_id);
+		printf ("b_asic ");
+
+		for (int asic_id = 0; asic_id < 0x10; asic_id++)
+		  {
+		    if (_backwards_asic[mod_id][asic_id]._seen)
+		      printf ("%4d",(int) _backwards_asic[mod_id][asic_id]._max_neg);
+		    else
+		      printf ("%4s","-");
+		  }
+		printf ("\n");
+	    }
+	  }
+
+#if 0
+	for (int mod_id = 0; mod_id < 0x40; mod_id++)
+	  {
+	    int any = 0;
+
+	    for (int ch_id = 0; ch_id < 0x80; ch_id++)
+	      for (int asic_id = 0; asic_id < 0x10; asic_id++)
+		any |= (_backwards_asic_ch[mod_id][asic_id][ch_id]._seen != 0);
+
+	    if (any)
+	      {
+		printf ("b_asic_ch === ASIC mod_id=%d ===\n", mod_id);
+		for (int ch_id = 0; ch_id < 0x80; ch_id++)
+		  {
+		    int any = 0;
+
+		    for (int asic_id = 0; asic_id < 0x10; asic_id++)
+		      any |= (_backwards_asic_ch[mod_id][asic_id][ch_id]._seen != 0);
+
+		    if (any)
+		      {
+			printf ("b_asic_ch %2d: ", ch_id);
+
+			for (int asic_id = 0; asic_id < 0x10; asic_id++)
+			  {
+			    if (_backwards_asic_ch[mod_id][asic_id][ch_id]._seen)
+			      printf ("%4d",(int) _backwards_asic_ch[mod_id][asic_id][ch_id]._max_neg);
+			    else
+			      printf ("%4s","-");
+			  }
+			printf ("\n");
+		      }
+		  }
+	      }
+	  }
+#endif
+
+	fflush(stdout);
+	abort();
+
 	return BLOCKS_NUM;
 	
 }
