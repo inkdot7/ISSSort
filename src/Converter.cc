@@ -1,5 +1,7 @@
 #include "Converter.hh"
 
+#include <byteswap.h>
+
 int in_asic_block = 0;
 
 struct backwards
@@ -601,6 +603,24 @@ void ISSConverter::ProcessBlockHeader( unsigned long nblock ){
 	}
 	
 	//std::cout << nblock << "\t" << header_DataLen << std::endl;
+
+	uint32_t my_seq           = header_sequence;
+	uint32_t my_header_endian = header_MyEndian;
+	uint32_t my_data_endian   = header_DataEndian;
+
+	if (my_header_endian == 0x100)
+	  {
+	    my_seq           = bswap_32(my_seq);
+	    my_header_endian = bswap_16(my_header_endian);
+	    my_data_endian   = bswap_16(my_data_endian);
+	  }
+
+	/*
+	printf ("======================================================\n");
+	printf ("== Block: #%d (%d %d) len=%d\n",
+		my_seq, my_header_endian, my_data_endian, header_DataLen);
+	printf ("==\n");
+	*/
 
 	if (header_DataEndian == 1)
 	  in_asic_block = 1;
