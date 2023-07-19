@@ -786,7 +786,13 @@ void ISSConverter::ProcessASICData(){
 	my_ch_id = ADCchanIdent & 0x007F; // 7 bits from 0
 	
 	my_tm_stp_lsb = word_1 & 0x0FFFFFFF;  // 28 bits from 0
-	
+
+	/*
+	printf ("ASIC: %3d %2d %3d : %d %4ld @ %10ld\n",
+		my_mod_id, my_asic_id, my_ch_id,
+		my_hit, my_adc_data, my_tm_stp_lsb);
+	*/
+
 	// Check things make sense
 	if( my_mod_id >= set->GetNumberOfArrayModules() ||
 		my_asic_id >= set->GetNumberOfArrayASICs() ||
@@ -909,7 +915,13 @@ void ISSConverter::ProcessCAENData(){
 		return;
 
 	}
-	
+
+	/*
+	printf ("CAEN: %3d %2d %3d : %5ld @ %10ld\n",
+		my_mod_id, my_data_id, my_ch_id,
+		my_adc_data, my_tm_stp_lsb);
+	*/
+
 	// reconstruct time stamp= MSB+LSB
 	my_tm_stp_lsb = word_1 & 0x0FFFFFFF;  // 28 bits from 0
 	my_tm_stp = ( my_tm_stp_msb << 28 ) | my_tm_stp_lsb;
@@ -1169,6 +1181,11 @@ void ISSConverter::ProcessInfoData(){
 
 	}
 
+	/*
+	printf ("info: %2d %2ld : %7ld @ %10ld\n",
+		my_mod_id, my_info_code, my_info_field,
+		my_tm_stp_lsb);
+	*/
 
 	backwards *bi = &_backwards_info[in_asic_block][my_info_code][my_mod_id];
 
