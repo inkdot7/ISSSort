@@ -13,7 +13,7 @@
 class ISSArrayEvt : public TObject {
 
 public:
-	
+
 	// setup functions
 	ISSArrayEvt();
 	~ISSArrayEvt();
@@ -24,10 +24,10 @@ public:
 				   double myptime, double myntime,
 				   bool myphit, bool mynhit,
 				   unsigned char mymod, unsigned char myrow );
-	
+
 	// Copy event
 	void CopyEvent( std::shared_ptr<ISSArrayEvt> in );
-	
+
 	// Return functions
 	inline float 			GetEnergy(){ return pen; };
 	inline float 			GetPEnergy(){ return pen; };
@@ -49,7 +49,7 @@ public:
 	float		GetPhi();
 	TVector2	GetPhiXY();
 	TVector3	GetPosition();
-	
+
 	char	FindPID( double z );
 	char	FindNID( double phi );
 	char	FindModule( double phi );
@@ -82,7 +82,7 @@ private:
 class ISSArrayPEvt : public ISSArrayEvt {
 
 public:
-	
+
 	// setup functions
 	ISSArrayPEvt();
 	~ISSArrayPEvt();
@@ -97,7 +97,7 @@ private:
 class ISSRecoilEvt : public TObject {
 
 public:
-		
+
 	// setup functions
 	ISSRecoilEvt();
 	~ISSRecoilEvt();
@@ -105,19 +105,19 @@ public:
 	void SetEvent( std::vector<float> myenergy,
 				   std::vector<unsigned char> myid, unsigned char mysec,
 				   double mydetime, double myetime );
-	
+
 	void ClearEvent();
-	
+
 	inline void AddRecoil( float myenergy, unsigned char myid ){
 		energy.push_back( myenergy );
 		id.push_back( myid );
 	};
-	
+
 	inline void SetSector( unsigned char s ){ sec = s; };
 	inline void SetdETime( double t ){ detime = t; };
 	inline void SetETime( double t ){ etime = t; };
 
-	
+
 	inline unsigned char	GetDepth(){ return energy.size(); };
 	inline unsigned char	GetSector(){ return sec; };
 	inline double		GetTime(){ return detime; };
@@ -127,12 +127,12 @@ public:
 	inline std::vector<float>			GetEnergies(){ return energy; };
 	inline std::vector<unsigned char>	GetIDs(){ return id; };
 
-	
+
 	inline float GetEnergy( unsigned char i ){
 		if( i < energy.size() ) return energy.at(i);
 		else return 0;
 	};
-	
+
 	inline float GetEnergyLoss( unsigned char start = 0, unsigned char stop = 0 ){
 		float total = 0;
 		for( unsigned int j = 0; j < energy.size(); ++j )
@@ -156,14 +156,14 @@ public:
 				total += energy.at(j);
 		return total;
 	};
-	
+
 	inline unsigned char GetID( unsigned char i ){
 		if( i < id.size() ) return id.at(i);
 		else return -1;
 	};
 
 
-	
+
 private:
 
 	// variables for recoil events
@@ -180,11 +180,11 @@ private:
 class ISSMwpcEvt : public TObject {
 
 public:
-		
+
 	// setup functions
 	ISSMwpcEvt();
 	~ISSMwpcEvt();
-	
+
 	void SetEvent( int mytacdiff, unsigned char myaxis,
 				   double mytime );
 
@@ -196,13 +196,13 @@ public:
 	inline unsigned char	GetAxis(){ return axis; };
 	inline double		GetTime(){ return time; };
 
-	
+
 private:
 
 	int				tacdiff;	///< TAC differences
 	unsigned char	axis;		///< axis ID, usually just x=0 and y=1
 	double		time;		///< time stamp of the MWPC event
-	
+
 	ClassDef( ISSMwpcEvt, 2 );
 
 };
@@ -210,11 +210,11 @@ private:
 class ISSElumEvt : public TObject {
 
 public:
-		
+
 	// setup functions
 	ISSElumEvt();
 	~ISSElumEvt();
-	
+
 	void SetEvent( float myenergy, unsigned char myid,
 				   unsigned char mysec, double mytime );
 
@@ -228,14 +228,14 @@ public:
 	inline unsigned char	GetSector(){ return sec; };
 	inline double		GetTime(){ return time; };
 
-	
+
 private:
 
 	float			energy;	///< Energy in the ELUM detector
 	unsigned char	id;		///< ID list, well, we only have one ELUM detector so it is always == 0
 	unsigned char	sec;	///< sector or quandrant of the ELUM detector, i.e. 0-3 when split into 4
 	double		time;	///< time stamp of the ELUM event
-	
+
 	ClassDef( ISSElumEvt, 3 );
 
 };
@@ -243,7 +243,7 @@ private:
 class ISSZeroDegreeEvt : public TObject {
 
 public:
-		
+
 	// setup functions
 	ISSZeroDegreeEvt();
 	~ISSZeroDegreeEvt();
@@ -251,7 +251,7 @@ public:
 	void SetEvent( std::vector<float> myenergy,
 				   std::vector<unsigned char> myid, unsigned char mysec,
 				   double mydetime, double myetime );
-	
+
 	void ClearEvent();
 
 	inline void AddZeroDegree( float myenergy, unsigned char myid ){
@@ -276,7 +276,7 @@ public:
 		if( i < energy.size() ) return energy.at(i);
 		else return 0;
 	};
-	
+
 	inline float GetEnergyLoss( unsigned char start = 0, unsigned char stop = 0 ){
 		float total = 0;
 		for( unsigned int j = 0; j < energy.size(); ++j )
@@ -292,7 +292,7 @@ public:
 				total += energy.at(j);
 		return total;
 	};
-	
+
 	inline float GetEnergyTotal( unsigned char start = 0, unsigned char stop = 1 ){
 		float total = 0;
 		for( unsigned int j = 0; j < energy.size(); ++j )
@@ -321,11 +321,11 @@ private:
 class ISSGammaRayEvt : public TObject {
 
 public:
-		
+
 	// setup functions
 	ISSGammaRayEvt();
 	~ISSGammaRayEvt();
-	
+
 	void SetEvent( float myenergy, unsigned char myid,
 				  unsigned char mytype, double mytime );
 
@@ -339,14 +339,14 @@ public:
 	inline unsigned char	GetType(){ return type; };
 	inline double		GetTime(){ return time; };
 
-	
+
 private:
 
 	float			energy;	///< Energy in the detector
 	unsigned char	id;		///< Detector ID
 	unsigned char	type;	///< Detector type: 0 - ScintArray, 1 - ... HPGe?
 	double		time;	///< time stamp of the event
-	
+
 	ClassDef( ISSGammaRayEvt, 2 );
 
 };
@@ -357,11 +357,11 @@ class ISSEvts : public TObject {
 //class ISSEvts {
 
 public:
-	
+
 	// setup functions
 	ISSEvts();
 	~ISSEvts();
-	
+
 	void AddEvt( std::shared_ptr<ISSArrayEvt> event );
 	void AddEvt( std::shared_ptr<ISSArrayPEvt> event );
 	void AddEvt( std::shared_ptr<ISSRecoilEvt> event );
@@ -408,7 +408,7 @@ public:
 	};
 
 	void ClearEvt();
-	
+
 	// ISOLDE timestamping
 	inline void SetEBIS( double t ){ ebis = t; return; };
 	inline void SetT1( double t ){ t1 = t; return; };
@@ -420,9 +420,9 @@ public:
 	inline double GetSC(){ return sc; };
 	inline bool GetLaserStatus(){ return laser; };
 
-	
+
 private:
-	
+
 	// variables for timestamping
 	double ebis;		///< absolute EBIS pulse time
 	double t1;			///< absolute proton pulse time
@@ -438,7 +438,7 @@ private:
 	std::vector<ISSGammaRayEvt> gamma_event;
 
 	ClassDef( ISSEvts, 6 )
-	
+
 };
 
 #endif

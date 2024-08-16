@@ -44,16 +44,16 @@
 
 
 class ISSHistogrammer {
-	
+
 public:
 
 	ISSHistogrammer( std::shared_ptr<ISSReaction> myreact, std::shared_ptr<ISSSettings> myset );
 	virtual ~ISSHistogrammer(){};
-	
+
 	void MakeHists();
 	void ResetHists();
 	unsigned long FillHists();
-	
+
 	void SetInputFile( std::vector<std::string> input_file_names );
 	void SetInputFile( std::string input_file_name );
 	void SetInputTree( TTree* user_tree );
@@ -74,32 +74,32 @@ public:
 	inline void PurgeOutput(){ output_file->Purge(2); }
 
 	inline TFile* GetFile(){ return output_file; };
-	
+
 	inline void AddProgressBar( std::shared_ptr<TGProgressBar> myprog ){
 		prog = myprog;
 		_prog_ = true;
 	};
-	
+
 	// Recoil - array coincidence (numbers to go to reaction file?)
 	inline bool	PromptCoincidence( std::shared_ptr<ISSRecoilEvt> r, std::shared_ptr<ISSArrayEvt> a ){
 		if( r->GetTime() - a->GetTime() > react->GetArrayRecoilPromptTime(0) &&
 			r->GetTime() - a->GetTime() < react->GetArrayRecoilPromptTime(1) ) return true;
 		else return false;
 	};
-	
+
 	// Recoil - elum coincidence
 	inline bool	PromptCoincidence( std::shared_ptr<ISSRecoilEvt> r, std::shared_ptr<ISSElumEvt> e ){
 		if( r->GetTime() - e->GetTime() > react->GetElumRecoilPromptTime(0) &&
 			r->GetTime() - e->GetTime() < react->GetElumRecoilPromptTime(1) ) return true;
 		else return false;
 	};
-	
+
 	inline bool	RandomCoincidence( std::shared_ptr<ISSRecoilEvt> r, std::shared_ptr<ISSArrayEvt> a ){
 		if( r->GetTime() - a->GetTime() > react->GetArrayRecoilRandomTime(0) &&
 			r->GetTime() - a->GetTime() < react->GetArrayRecoilRandomTime(1) ) return true;
 		else return false;
 	};
-	
+
 	inline bool	RandomCoincidence( std::shared_ptr<ISSRecoilEvt> r, std::shared_ptr<ISSElumEvt> e ){
 		if( r->GetTime() - e->GetTime() > react->GetElumRecoilRandomTime(0) &&
 			r->GetTime() - e->GetTime() < react->GetElumRecoilRandomTime(1) ) return true;
@@ -176,13 +176,13 @@ public:
 	}
 
 private:
-	
+
 	// Reaction
 	std::shared_ptr<ISSReaction> react;
-	
+
 	// Settings file
 	std::shared_ptr<ISSSettings> set;
-	
+
 	/// Input tree
 	TChain *input_tree;
 	ISSEvts *read_evts = nullptr;
@@ -191,21 +191,21 @@ private:
 	std::shared_ptr<ISSRecoilEvt> recoil_evt;
 	std::shared_ptr<ISSElumEvt> elum_evt;
 	std::shared_ptr<ISSZeroDegreeEvt> zd_evt;
-	
+
 	/// Output file
 	TFile *output_file;
-	
+
 	// Progress bar
 	bool _prog_;
 	std::shared_ptr<TGProgressBar> prog;
 
 	// Counters
 	unsigned long n_entries;
-	
+
 	//------------//
 	// Histograms //
 	//------------//
-	
+
 	// Timing
 	std::vector<std::vector<TH1F*>> recoil_array_td;
 	std::vector<std::vector<TH1F*>> recoil_elum_td;
@@ -268,7 +268,7 @@ private:
 	TH2F *E_vs_theta, *E_vs_theta_ebis, *E_vs_theta_ebis_on, *E_vs_theta_ebis_off;
 	TH2F *E_vs_theta_recoil, *E_vs_theta_recoilT, *E_vs_theta_T1;
 	TH2F *E_vs_theta_recoil_random, *E_vs_theta_recoilT_random;
-	
+
 	// Array - Ex vs. thetaCM
 	std::vector<TH2F*> Ex_vs_theta_mod;
 	std::vector<TH2F*> Ex_vs_theta_ebis_mod;
@@ -290,7 +290,7 @@ private:
 	TH2F *Ex_vs_theta, *Ex_vs_theta_ebis, *Ex_vs_theta_ebis_on, *Ex_vs_theta_ebis_off;
 	TH2F *Ex_vs_theta_recoil, *Ex_vs_theta_recoilT, *Ex_vs_theta_T1;
 	TH2F *Ex_vs_theta_recoil_random, *Ex_vs_theta_recoilT_random;
-		
+
 	// Array - Ex vs. z
 	std::vector<TH2F*> Ex_vs_z_mod;
 	std::vector<TH2F*> Ex_vs_z_ebis_mod;
@@ -312,7 +312,7 @@ private:
 	TH2F *Ex_vs_z, *Ex_vs_z_ebis, *Ex_vs_z_ebis_on, *Ex_vs_z_ebis_off;
 	TH2F *Ex_vs_z_recoil, *Ex_vs_z_recoilT, *Ex_vs_z_T1;
 	TH2F *Ex_vs_z_recoil_random, *Ex_vs_z_recoilT_random;
-		
+
 	// Array - Ex
 	std::vector<TH1F*> Ex_mod;
 	std::vector<TH1F*> Ex_ebis_mod;
@@ -359,7 +359,7 @@ private:
 	TH1F *Theta_recoil, *Theta_recoilT, *Theta_T1;
 	TH1F *Theta_recoil_random, *Theta_recoilT_random;
 	TH2F *Theta_vs_T1;
-		
+
 	// ELUM
 	std::vector<TH1F*> elum_sec;
 	std::vector<TH1F*> elum_ebis_sec;
@@ -373,7 +373,7 @@ private:
 	TH1F *elum_recoil, *elum_recoilT;
 	TH1F *elum_recoil_random, *elum_recoilT_random;
 	TH2F *elum_vs_T1;
-	
+
 };
 
 #endif

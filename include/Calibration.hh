@@ -70,7 +70,7 @@ public:
 	unsigned int CaenThreshold( unsigned int mod, unsigned int chan );
 	long double CaenTime( unsigned int mod, unsigned int chan );
 	std::string CaenType( unsigned int mod, unsigned int chan );
-	
+
 	/// Setter for the ASIC energy calibration parameters
 	/// \param[in] mod The module on the array
 	/// \param[in] asic The ASIC number on the module
@@ -176,9 +176,9 @@ public:
 private:
 
 	std::string fInputFile;///< The location of the calibration input file
-	
+
 	std::shared_ptr<ISSSettings> set;///< Pointer to the ISSSettings object
-	
+
 	TRandom *fRand;///< Used to eliminate binning issues
 
 	// Calibration file value storage
@@ -205,7 +205,7 @@ private:
 	float fCaenOffsetDefault;///< The default constant in CAEN energy calculations
 	float fCaenGainDefault;///< The default linear term in CAEN energy calculations
 	float fCaenGainQuadrDefault;///< The default quadratic term in CAEN energy calculations
-	
+
 	// Stuff for the time walk calculation
 	std::unique_ptr<ROOT::Math::RootFinder> rf;///< Root finding object for the time-walk function: walk_function( double *x, double *params )
 	TF1 *fa;///< TF1 for the time walk function: walk_function( double *x, double *params )
@@ -220,7 +220,7 @@ private:
 
 
 	//ClassDef(ISSCalibration, 1)
-   
+
 };
 
 #endif

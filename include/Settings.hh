@@ -12,7 +12,7 @@
 *
 * A class to read in the settings file in ROOT's TConfig format. The ISSSettings class contains all the information about detector layout, data settings, and defines which detector is which. These can be changed directly in the settings file that is fed into ISSSort using the "-s" flag.
 *
-*/ 
+*/
 
 class ISSSettings {
 
@@ -20,7 +20,7 @@ public:
 
 	ISSSettings( std::string filename );
 	inline virtual ~ISSSettings() {};
-	
+
 	void ReadSettings();
 	void PrintSettings();
 	void SetFile( std::string filename ){
@@ -29,7 +29,7 @@ public:
 	const std::string InputFile(){
 		return fInputFile;
 	}
-	
+
 	// Array settings
 	inline unsigned int GetNumberOfArrayModules(){ return n_array_mod; };
 	inline unsigned int GetNumberOfArrayASICs(){ return n_array_asic; };
@@ -40,7 +40,7 @@ public:
 	inline unsigned int GetNumberOfArrayNstrips(){ return n_array_nstrip; };
 	inline unsigned int GetNumberOfArraySides(){ return n_array_side; };
 
-	
+
 	// CAEN settings
 	inline unsigned char GetNumberOfCAENModules(){ return n_caen_mod; };
 	inline unsigned char GetNumberOfCAENChannels(){ return n_caen_ch; };
@@ -54,7 +54,7 @@ public:
 			return caen_extras[i][j];
 		else return 0;
 	};
-	
+
 	// Info settings
 	inline unsigned char GetExternalTriggerCode(){ return extt_code; };
 	inline unsigned char GetSyncCode(){ return sync_code; };
@@ -75,7 +75,7 @@ public:
 	inline unsigned char GetCAENPulserModule(){ return caen_pulser_mod; };
 	inline unsigned char GetCAENPulserChannel(){ return caen_pulser_ch; };
 	inline unsigned char GetCAENPulserCode(){ return caen_pulser_code; };
-	
+
 	inline unsigned char GetEBISModule(){ return caen_ebis_mod; };
 	inline unsigned char GetEBISChannel(){ return caen_ebis_ch; };
 	inline unsigned char GetEBISCode(){ return ebis_code; };
@@ -102,13 +102,13 @@ public:
 	inline double GetZeroDegreeHitWindow(){ return zd_hit_window; }
 	inline double GetGammaRayHitWindow(){ return gamma_hit_window; }
 
-	
+
 	// Data settings
 	inline unsigned int GetBlockSize(){ return block_size; };
 	inline bool IsCAENOnly(){ return flag_caen_only; };
 	inline bool IsASICOnly(){ return flag_asic_only; };
 
-	
+
 	// Recoil detector
 	inline unsigned char GetNumberOfRecoilSectors(){ return n_recoil_sector; };
 	inline unsigned char GetNumberOfRecoilLayers(){ return n_recoil_layer; };
@@ -124,7 +124,7 @@ public:
 	char GetRecoilModule( unsigned char sec, unsigned char layer );
 	char GetRecoilChannel( unsigned char sec, unsigned char layer );
 	bool IsRecoil( unsigned char mod, unsigned char ch );
-	
+
 	// MWPC
 	inline unsigned char GetNumberOfMWPCAxes(){ return n_mwpc_axes; };
 	char GetMWPCAxis( unsigned char mod, unsigned char ch );
@@ -155,7 +155,7 @@ private:
 	unsigned char n_array_mod;	///< 3 modules make a full array
 	unsigned char n_array_asic;	///< 4 p-side + 2 n-side per module
 	unsigned char n_array_ch;	///< 128 channels per ASIC
-	
+
 	// Array geometry
 	unsigned char n_array_row;		///< 4x2 DSSSDs per module, but paired; dE-E for recoil, gas cathodes (13?)
 	unsigned char n_array_pstrip;	///< number of p-side strips in each DSSSD
@@ -168,8 +168,8 @@ private:
 	unsigned char n_caen_ch;
 	std::vector<unsigned int> caen_model;
 	std::vector<std::vector<unsigned char>> caen_extras;
-	
-	
+
+
 	// Info code settings
 	unsigned char extt_code;			///< This is the info code for the external timestamp, 5 before 2019 and 14 after 2019 (This is ISS == 14)
 	unsigned char sync_code;			///< Medium significant bits of the timestamp are here
@@ -200,7 +200,7 @@ private:
 	unsigned char caen_laser_ch;		///< Location of the Laser signal in the CAEN system (channel)
 	unsigned char laser_code;			///< Info code when we have a Laser event in InfoData packets
 
-	
+
 	// Event builder
 	double event_window;			///< Event builder time window in ns
 	double recoil_hit_window;		///< Time window in ns for correlating recoil E-dE hits
@@ -210,13 +210,13 @@ private:
 	double zd_hit_window;			///< Time window in ns for correlating ZeroDegree E-dE hits
 	double gamma_hit_window;		///< Time window in ns for correlating Gamma-Gamma hits (addback?)
 
-	
+
 	// Data format
 	unsigned int block_size;		///< not yet implemented, needs C++ style reading of data files
 	bool flag_caen_only;			///< when there is only CAEN data in the file
 	bool flag_asic_only;			///< when there is only CAEN data in the file
 
-	
+
 	// Recoil detectors
 	unsigned char n_recoil_sector;						///< Number of recoil detector sectors or quadrants; 1 for gas and 4 for Si
 	unsigned char n_recoil_layer;						///< Number of recoil detector layers; 13 for gas and 2 for Si
@@ -231,7 +231,7 @@ private:
 	std::vector<std::vector<char>> recoil_sector;		///< A channel map for the recoil sectors (-1 if not a recoil)
 	std::vector<std::vector<char>> recoil_layer;			///< A channel map for the recoil layers (-1 if not a recoil)
 
-	
+
 	// MWPC
 	unsigned char n_mwpc_axes;							///< Number of MWPC axes (usually 2: x and y). Two TACs per axis
 	std::vector<std::vector<unsigned char>> mwpc_mod;	///< Module number of each TAC input of each axis of the MWPC
@@ -239,28 +239,28 @@ private:
 	std::vector<std::vector<char>> mwpc_axis;			///< A channel map for the MWPC axes (-1 if not an MWPC)
 	std::vector<std::vector<char>> mwpc_tac;			///< A channel map for the MWPC TACs (-1 if not an MWPC)
 
-	
+
 	// ELUM detector
 	unsigned char n_elum_sector;				///< Number of ELUM detector sectors or quadrants; usually 4, maybe 6 in the future?
 	std::vector<unsigned char> elum_mod;			///< A list of module numbers for each ELUM detector sector
 	std::vector<unsigned char> elum_ch;			///< A list of channel numbers for each ELUM detector sector
 	std::vector<std::vector<char>> elum_sector;	///< A channel map for the ELUM sectors (-1 if not an ELUM)
 
-	
+
 	// ZeroDegree detector
 	unsigned char n_zd_layer;					///< Number of ZeroDegree detector layers; always 2, because it's silicon dE-E
 	std::vector<unsigned char> zd_mod;			///< A list of module numbers for each ZeroDegree detector layer
 	std::vector<unsigned char> zd_ch;			///< A list of channel numbers for each ZeroDegree detector layor
 	std::vector<std::vector<char>> zd_layer;	///< A channel map for the ZeroDegree layers (-1 if not a ZeroDegree)
 
-	
+
 	// ELUM detector
 	unsigned char n_scint_detector;					///< Number of ScintArray detectors
 	std::vector<unsigned char> scint_mod;			///< A list of module numbers for each ScintArray detectors
 	std::vector<unsigned char> scint_ch;			///< A list of channel numbers for each ScintArray detectors
 	std::vector<std::vector<char>> scint_detector;	///< A channel map for the ScintArray detectors (-1 if not an ScintArray detector)
 
-	
+
 };
 
 #endif

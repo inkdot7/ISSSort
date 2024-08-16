@@ -7,7 +7,7 @@
 #include "TObject.h"
 
 class ISSAsicData : public TObject {
-	
+
 public:
 
 	ISSAsicData();
@@ -16,7 +16,7 @@ public:
 			  unsigned char c, bool h, bool th,
 			  float e, double w );
 	~ISSAsicData();
-	
+
 	inline double					GetTime() { return (double)timestamp; };
 	inline unsigned long long		GetTimeStamp() { return timestamp; };
 	inline unsigned short			GetAdcValue() { return adc_value; };
@@ -37,11 +37,11 @@ public:
 	inline void SetHitBit( bool h ){ hit_bit = h; };
 	inline void SetEnergy( float e ){ energy = e; };
 	inline void SetThreshold( bool t ){ thres = t; };
-	
+
 	void ClearData();
 
 protected:
-	
+
 	unsigned long long		timestamp;
 	unsigned short			adc_value;
 	unsigned char			mod;
@@ -52,13 +52,13 @@ protected:
 	float					energy;
 	double					walk;
 
-	
+
 	ClassDef( ISSAsicData, 3 )
-	
+
 };
 
 class ISSCaenData : public TObject {
-	
+
 public:
 
 	ISSCaenData();
@@ -103,7 +103,7 @@ public:
 	void ClearData();
 
 protected:
-	
+
 	unsigned long long			timestamp;
 	float						finetime;
 	float						baseline;
@@ -115,24 +115,24 @@ protected:
 	bool						thres;		///< is the energy over threshold?
 	float						energy;
 
-	
+
 	ClassDef( ISSCaenData, 6 )
-	
+
 };
 
 class ISSInfoData : public TObject {
-	
+
 public:
 
 	ISSInfoData();
 	ISSInfoData( unsigned long long t, unsigned char c, unsigned char m );
 	~ISSInfoData();
-	
+
 	inline double	 			GetTime(){ return (double)timestamp; };
 	inline unsigned long long	GetTimeStamp(){ return timestamp; };
 	inline unsigned char 		GetCode(){ return code; };
 	inline unsigned char 		GetModule(){ return mod; };
-	
+
 	inline void SetTimeStamp( unsigned long long t ){ timestamp = t; };
 	inline void SetCode( unsigned char c ){ code = c; };
 	inline void SetModule( unsigned char m ){ mod = m; };
@@ -140,7 +140,7 @@ public:
 	void ClearData();
 
 protected:
-	
+
 	unsigned long long		timestamp;	///< timestamp of info event
 	unsigned char			code;	///< code here represents which information timestamp we have
 	unsigned char			mod;	///< module ID of the event
@@ -150,19 +150,19 @@ protected:
 	/// code = 21 is EBIS proton timestamp
 	/// code = 22 is T1 timestamp
 
-	
+
 	ClassDef( ISSInfoData, 2 )
-	
+
 };
 
 class ISSDataPackets : public TObject {
-	
+
 public:
-	
+
 	inline bool	IsAsic() { return asic_packets.size(); };
 	inline bool	IsCaen() { return caen_packets.size(); };
 	inline bool	IsInfo() { return info_packets.size(); };
-	
+
 	void SetData( std::shared_ptr<ISSAsicData> data );
 	void SetData( std::shared_ptr<ISSCaenData> data );
 	void SetData( std::shared_ptr<ISSInfoData> data );
@@ -171,7 +171,7 @@ public:
 	inline std::shared_ptr<ISSAsicData> GetAsicData() { return std::make_shared<ISSAsicData>( asic_packets.at(0) ); };
 	inline std::shared_ptr<ISSCaenData> GetCaenData() { return std::make_shared<ISSCaenData>( caen_packets.at(0) ); };
 	inline std::shared_ptr<ISSInfoData> GetInfoData() { return std::make_shared<ISSInfoData>( info_packets.at(0) ); };
-	
+
 	// Complicated way to get the time...
 	double GetTime();
 	double GetTimeWithWalk();
@@ -182,7 +182,7 @@ public:
 	void ClearData();
 
 protected:
-	
+
 	std::vector<ISSAsicData> asic_packets;
 	std::vector<ISSCaenData> caen_packets;
 	std::vector<ISSInfoData> info_packets;
