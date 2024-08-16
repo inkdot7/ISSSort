@@ -27,11 +27,11 @@ ISSInfoData::ISSInfoData( unsigned long long t, unsigned char c, unsigned char m
 
 
 void ISSDataPackets::SetData( std::shared_ptr<ISSAsicData> data ){
-	
+
 	// Reset the vector to size = 0
 	// We only want to have one element per Tree entry
 	ClearData();
-	
+
 	// Make a copy of the input data and push it back
 	ISSAsicData fill_data;
 	fill_data.SetTimeStamp( data->GetTime() );
@@ -45,18 +45,18 @@ void ISSDataPackets::SetData( std::shared_ptr<ISSAsicData> data ){
 	fill_data.SetThreshold( data->IsOverThreshold() );
 
 	asic_packets.push_back( fill_data );
-	
+
 }
 
 void ISSDataPackets::SetData( std::shared_ptr<ISSCaenData> data ){
-	
+
 	// Reset the vector to size = 0
 	// We only want to have one element per Tree entry
 	ClearData();
-	
+
 	// Make a copy of the input data and push it back
 	ISSCaenData fill_data;
-	
+
 	fill_data.SetTimeStamp( data->GetTimeStamp() );
 	fill_data.SetFineTime( data->GetFineTime() );
 	fill_data.SetTrace( data->GetTrace() );
@@ -66,7 +66,7 @@ void ISSDataPackets::SetData( std::shared_ptr<ISSCaenData> data ){
 	fill_data.SetChannel( data->GetChannel() );
 	fill_data.SetEnergy( data->GetEnergy() );
 	fill_data.SetThreshold( data->IsOverThreshold() );
-	
+
 	//std::cout << fill_data.GetTimeStamp() << "\t" << fill_data.GetFineTime() << std::endl;
 
 	caen_packets.push_back( fill_data );
@@ -76,11 +76,11 @@ void ISSDataPackets::SetData( std::shared_ptr<ISSCaenData> data ){
 }
 
 void ISSDataPackets::SetData( std::shared_ptr<ISSInfoData> data ){
-	
+
 	// Reset the vector to size = 0
 	// We only want to have one element per Tree entry
 	ClearData();
-	
+
 	// Make a copy of the input data and push it back
 	ISSInfoData fill_data;
 	fill_data.SetTimeStamp( data->GetTime() );
@@ -88,68 +88,68 @@ void ISSDataPackets::SetData( std::shared_ptr<ISSInfoData> data ){
 	fill_data.SetModule( data->GetModule() );
 
 	info_packets.push_back( fill_data );
-	
+
 }
 
 
 void ISSDataPackets::ClearData(){
-	
+
 	asic_packets.clear();
 	caen_packets.clear();
 	info_packets.clear();
-	
+
 	std::vector<ISSAsicData>().swap(asic_packets);
 	std::vector<ISSCaenData>().swap(caen_packets);
 	std::vector<ISSInfoData>().swap(info_packets);
 
 	return;
-	
+
 }
 
 double ISSDataPackets::GetTime(){
-		
+
 	if( IsAsic() ) return GetAsicData()->GetTime();
 	if( IsCaen() ) return GetCaenData()->GetTime();
 	if( IsInfo() ) return GetInfoData()->GetTime();
 
 	return 0;
-	
+
 }
 
 double ISSDataPackets::GetTimeWithWalk(){
-		
+
 	if( IsAsic() ) return GetAsicData()->GetTime() + GetAsicData()->GetWalk();
 	if( IsCaen() ) return GetCaenData()->GetTime();
 	if( IsInfo() ) return GetInfoData()->GetTime();
 
 	return 0;
-	
+
 }
 
 unsigned long long ISSDataPackets::GetTimeStamp(){
-		
+
 	if( IsAsic() ) return GetAsicData()->GetTimeStamp();
 	if( IsCaen() ) return GetCaenData()->GetTimeStamp();
 	if( IsInfo() ) return GetInfoData()->GetTimeStamp();
 
 	return 0;
-	
+
 }
 
 UInt_t ISSDataPackets::GetTimeMSB(){
-	
+
 	return ( ((unsigned long long)this->GetTimeStamp() >> 32) & 0xFFFFFFFF );
-	
+
 }
 
 UInt_t ISSDataPackets::GetTimeLSB(){
-	
+
 	return (UInt_t)this->GetTimeStamp();
-	
+
 }
 
 void ISSCaenData::ClearData(){
-	
+
 	timestamp = 0.0;
 	finetime = 0.0;
 	baseline = 0.0;
@@ -162,11 +162,11 @@ void ISSCaenData::ClearData(){
 	thres = true;
 
 	return;
-	
+
 }
 
 void ISSAsicData::ClearData(){
-	
+
 	timestamp = 0.0;
 	walk = 0;
 	adc_value = 0;
@@ -178,16 +178,16 @@ void ISSAsicData::ClearData(){
 	thres = true;
 
 	return;
-	
+
 }
 
 void ISSInfoData::ClearData(){
-	
+
 	timestamp = 0.0;
 	code = 0;
 	mod = 255;
-	
+
 	return;
-	
+
 }
 
