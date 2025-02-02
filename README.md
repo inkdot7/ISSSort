@@ -113,7 +113,7 @@ At this stage, you can generate cuts on the recoil spectra or the energy versus 
 Pulse height corrections are also performed at this step to account for the non-lineary energy response to light ions in silicon.
 
 Users can edit this code as they please, producing their own plots.
-There is no "user input" specifically, but if there are extra histograms that are of use to the community, please send me an email or raise 
+There is no "user input" specifically, but if there are extra histograms that are of use to the community, please send me an email or raise
 a feature request on GitHub and I will consider adding it to the standard code.
 
 

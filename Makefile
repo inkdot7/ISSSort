@@ -91,7 +91,7 @@ DEPENDENCIES =  $(INC_DIR)/AutoCalibrator.hh \
 				$(INC_DIR)/TIssData.hh
 
 all: $(BIN_DIR)/iss_sort $(LIB_DIR)/libiss_sort.so
- 
+
 $(LIB_DIR)/libiss_sort.so: iss_sort.o $(OBJECTS) iss_sortDict.o
 	mkdir -p $(LIB_DIR)
 	$(LD) iss_sort.o $(OBJECTS) iss_sortDict.o $(SHAREDSWITCH)$@ $(LIBS) -o $@
@@ -131,4 +131,4 @@ doc:
 	ln -sf $(DOC_DIR)/index.html $(DOC_HTML)
 
 doc-clean:
-	rm -rvf $(DOC_DIR)/* $(DOC_DIR)/.??* $(DOC_HTML) 
+	rm -rvf $(DOC_DIR)/* $(DOC_DIR)/.??* $(DOC_HTML)

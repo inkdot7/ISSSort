@@ -19,7 +19,7 @@
 #BeamZ: 12		# atomic number
 #BeamE: 8500.	# the laboratory beam energy in keV/u (note, not the usual MeV/u)
 #TargetA: 2		#
-#TargetZ: 1		#  
+#TargetZ: 1		#
 #EjectileA: 1	# in (d,p) the ejectile is the proton
 #EjectileZ: 1	# we keep this language even though we have inverse kinematics
 #RecoilA: 31	# the recoil is the heavy ion
@@ -27,7 +27,7 @@
 
 
 ## Magnetic field settings
-#Mfield: 2.0		# Magnetic field strength in Tesla 
+#Mfield: 2.0		# Magnetic field strength in Tesla
 
 
 ## Detector and target geometry
