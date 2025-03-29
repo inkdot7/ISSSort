@@ -19,7 +19,7 @@ void ISSHistogrammer::SetOutput( std::string output_file_name ){
 	// These are the branches we need
 	rx_evts	= std::make_unique<ISSRxEvent>();
 	rx_info	= std::make_unique<ISSRxInfo>();
-
+	
 	// --------------------------------------------------------- //
 	// Create output file and create reaction tree
 	// --------------------------------------------------------- //
@@ -28,7 +28,7 @@ void ISSHistogrammer::SetOutput( std::string output_file_name ){
 	output_tree->Branch( "RxEvent", rx_evts.get() );
 	output_tree->Branch( "RxInfo", rx_info.get() );
 	output_tree->SetAutoFlush();
-
+	
 	// Setup the reaction info
 	rx_info->SetRxInfo( react );
 	
@@ -39,10 +39,10 @@ void ISSHistogrammer::SetOutput( std::string output_file_name ){
 
 void ISSHistogrammer::MakeHists() {
 	
-    std::string hname, htitle;
-    std::string dirname;
-   
-    std::vector<double> zbins;
+	std::string hname, htitle;
+	std::string dirname;
+	
+	std::vector<double> zbins;
 	double d0 = react->GetArrayDistance();
 	double d;
 	
@@ -64,7 +64,7 @@ void ISSHistogrammer::MakeHists() {
 		// Add the upper edge of the wafer
 		if( d0 < 0 ) zbins.push_back( d0 - d - 0.953 );
 		else zbins.push_back( d0 + d + 0.953 );
-
+		
 	} // row
 	
 	// Add a bin to the start and end for space
@@ -79,7 +79,7 @@ void ISSHistogrammer::MakeHists() {
 	
 	// Order the bins
 	std::sort( zbins.begin(), zbins.end() );
-
+	
 	// Array physics histograms
 	// Singles mode
 	dirname = "SinglesMode";
@@ -89,7 +89,7 @@ void ISSHistogrammer::MakeHists() {
 	hname = "E_vs_z";
 	htitle = "Energy vs. z distance;z [mm];Energy [keV];Counts per mm per 20 keV";
 	E_vs_z = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+	
 	hname = "Theta";
 	htitle = "Centre of mass angle;#theta_{CM} [deg];Counts per deg";
 	Theta = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
@@ -97,7 +97,7 @@ void ISSHistogrammer::MakeHists() {
 	hname = "Ex";
 	htitle = "Excitation energy;Excitation energy [keV];Counts per 20 keV";
 	Ex = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+	
 	hname = "E_vs_theta";
 	htitle = "Energy vs. centre of mass angle;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 	E_vs_theta = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
@@ -127,7 +127,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Energy vs. z distance for user cut " + std::to_string(j);
 		htitle += ";z [mm];Energy [keV];Counts per mm per 20 keV";
 		E_vs_z_cut[j] = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+		
 		hname = "Theta_cut"+ std::to_string(j);
 		htitle = "Centre of mass angle for user cut " + std::to_string(j);
 		htitle += ";#theta_{CM} [deg];Counts per deg";
@@ -137,7 +137,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Excitation energy for user cut " + std::to_string(j);
 		htitle += ";Excitation energy [keV];Counts per 20 keV";
 		Ex_cut[j] = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+		
 		hname = "E_vs_theta_cut";
 		htitle = "Energy vs. centre of mass angle for user cut " + std::to_string(j);
 		htitle += ";#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
@@ -174,7 +174,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Energy vs. z distance for module " + std::to_string(j);
 		htitle += ";z [mm];Energy [keV];Counts per mm per 20 keV";
 		E_vs_z_mod[j] = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+		
 		hname = "Theta_mod"+ std::to_string(j);
 		htitle = "Centre of mass angle for module " + std::to_string(j);
 		htitle += ";#theta_{CM} [deg];Counts per deg";
@@ -184,7 +184,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Excitation energy for module " + std::to_string(j);
 		htitle += ";Excitation energy [keV];Counts per 20 keV";
 		Ex_mod[j] = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+		
 		hname = "E_vs_theta_mod"+ std::to_string(j);
 		htitle = "Energy vs. centre of mass angle for module " + std::to_string(j);
 		htitle += ";#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
@@ -218,15 +218,15 @@ void ISSHistogrammer::MakeHists() {
 	hname = "E_vs_z_ebis_off";
 	htitle = "Energy vs. z distance gated off EBIS;z [mm];Energy [keV];Counts per mm per 20 keV";
 	E_vs_z_ebis_off = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+	
 	hname = "Theta_ebis";
 	htitle = "Centre of mass angle gated by EBIS and off beam subtracted;#theta_{CM} [deg];Counts per deg";
 	Theta_ebis = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
-
+	
 	hname = "Theta_ebis_on";
 	htitle = "Centre of mass angle gated on EBIS;#theta_{CM} [deg];Counts per deg";
 	Theta_ebis_on = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
-
+	
 	hname = "Theta_ebis_off";
 	htitle = "Centre of mass angle gated off EBIS;#theta_{CM} [deg];Counts per deg";
 	Theta_ebis_off = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
@@ -242,7 +242,7 @@ void ISSHistogrammer::MakeHists() {
 	hname = "Ex_ebis_off";
 	htitle = "Excitation energy gated off EBIS;Excitation energy [keV];Counts per 20 keV";
 	Ex_ebis_off = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+	
 	hname = "E_vs_theta_ebis";
 	htitle = "Energy vs. centre of mass angle gated by EBIS and off beam subtracted;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 	E_vs_theta_ebis = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
@@ -318,17 +318,17 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Energy vs. z distance for user cut " + std::to_string(j);
 		htitle += " gated off EBIS;z [mm];Energy [keV];Counts per mm per 20 keV";
 		E_vs_z_ebis_off_cut[j] = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+		
 		hname = "Theta_ebis_cut"+ std::to_string(j);
 		htitle = "Centre of mass angle for user cut " + std::to_string(j);
 		htitle += " gated by EBIS and off beam subtracted;#theta_{CM} [deg];Counts per deg";
 		Theta_ebis_cut[j] = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
-
+		
 		hname = "Theta_ebis_on_cut"+ std::to_string(j);
 		htitle = "Centre of mass angle for user cut " + std::to_string(j);
 		htitle += " gated on EBIS;#theta_{CM} [deg];Counts per deg";
 		Theta_ebis_on_cut[j] = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
-
+		
 		hname = "Theta_ebis_off_cut"+ std::to_string(j);
 		htitle = "Centre of mass angle for user cut " + std::to_string(j);
 		htitle += " gated off EBIS;#theta_{CM} [deg];Counts per deg";
@@ -338,7 +338,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Excitation energy for user cut " + std::to_string(j);
 		htitle += " gated by EBIS and off beam subtracted;Excitation energy [keV];Counts per mm per 20 keV";
 		Ex_ebis_cut[j] = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+		
 		hname = "Ex_ebis_on_cut" + std::to_string(j);
 		htitle = "Excitation energy for user cut " + std::to_string(j);
 		htitle += " gated on EBIS;Excitation energy [keV];Counts per 20 keV";
@@ -348,17 +348,17 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Excitation energy for user cut " + std::to_string(j);
 		htitle += " gated off EBIS;Excitation energy [keV];Counts per 20 keV";
 		Ex_ebis_off_cut[j] = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+		
 		hname = "E_vs_theta_ebis_cut";
 		htitle = "Energy vs. centre of mass angle for user cut " + std::to_string(j);
 		htitle += " gated by EBIS and off beam subtracted;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 		E_vs_theta_ebis_cut[j] = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
-
+		
 		hname = "E_vs_theta_ebis_on_cut";
 		htitle = "Energy vs. centre of mass angle for user cut " + std::to_string(j);
 		htitle += " gated on EBIS;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 		E_vs_theta_ebis_on_cut[j] = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
-
+		
 		hname = "E_vs_theta_ebis_off_cut";
 		htitle = "Energy vs. centre of mass angle for user cut " + std::to_string(j);
 		htitle += " gated off EBIS;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
@@ -435,17 +435,17 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Energy vs. z distance for module " + std::to_string(j);
 		htitle += " gated off EBIS;z [mm];Energy [keV];Counts per mm per 20 keV";
 		E_vs_z_ebis_off_mod[j] = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+		
 		hname = "Theta_ebis_mod"+ std::to_string(j);
 		htitle = "Centre of mass angle for module " + std::to_string(j);
 		htitle += " gated by EBIS and off beam subtracted;#theta_{CM} [deg];Counts per deg";
 		Theta_ebis_mod[j] = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
-
+		
 		hname = "Theta_ebis_on_mod"+ std::to_string(j);
 		htitle = "Centre of mass angle for module " + std::to_string(j);
 		htitle += " gated on EBIS;#theta_{CM} [deg];Counts per deg";
 		Theta_ebis_on_mod[j] = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
-
+		
 		hname = "Theta_ebis_off_mod"+ std::to_string(j);
 		htitle = "Centre of mass angle for module " + std::to_string(j);
 		htitle += " gated off EBIS;#theta_{CM} [deg];Counts per deg";
@@ -465,17 +465,17 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Excitation energy for module " + std::to_string(j);
 		htitle += " gated off EBIS;Excitation energy [keV];Counts per 20 keV";
 		Ex_ebis_off_mod[j] = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+		
 		hname = "E_vs_theta_ebis_mod"+ std::to_string(j);
 		htitle = "Energy vs. centre of mass angle for module " + std::to_string(j);
 		htitle += " gated by EBIS and off beam subtracted;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 		E_vs_theta_ebis_mod[j] = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
-
+		
 		hname = "E_vs_theta_ebis_on_mod"+ std::to_string(j);
 		htitle = "Energy vs. centre of mass angle for module " + std::to_string(j);
 		htitle += " gated on EBIS;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 		E_vs_theta_ebis_on_mod[j] = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
-
+		
 		hname = "E_vs_theta_ebis_off_mod"+ std::to_string(j);
 		htitle = "Energy vs. centre of mass angle for module " + std::to_string(j);
 		htitle += " gated off EBIS;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
@@ -641,7 +641,7 @@ void ISSHistogrammer::MakeHists() {
 		Ex_vs_z_recoilT_cut.resize( react->GetNumberOfEvsZCuts() );
 		Ex_vs_z_recoil_random_cut.resize( react->GetNumberOfEvsZCuts() );
 		Ex_vs_z_recoilT_random_cut.resize( react->GetNumberOfEvsZCuts() );
-
+		
 		for( unsigned int j = 0; j < react->GetNumberOfEvsZCuts(); ++j ) {
 			
 			dirname = "RecoilMode/cut_" + std::to_string(j);
@@ -795,7 +795,7 @@ void ISSHistogrammer::MakeHists() {
 		Ex_vs_z_recoilT_mod.resize( set->GetNumberOfArrayModules() );
 		Ex_vs_z_recoil_random_mod.resize( set->GetNumberOfArrayModules() );
 		Ex_vs_z_recoilT_random_mod.resize( set->GetNumberOfArrayModules() );
-
+		
 		for( unsigned int j = 0; j < set->GetNumberOfArrayModules(); ++j ) {
 			
 			dirname = "RecoilMode/module_" + std::to_string(j);
@@ -1337,7 +1337,7 @@ void ISSHistogrammer::MakeHists() {
 		
 	} // fission mode
 	
-
+	
 	// T1 mode
 	dirname = "T1Mode";
 	output_file->mkdir( dirname.data() );
@@ -1346,7 +1346,7 @@ void ISSHistogrammer::MakeHists() {
 	hname = "E_vs_z_T1";
 	htitle = "Energy vs. z distance with a time gate on T1 proton pulse;z [mm];Energy [keV];Counts per mm per 20 keV";
 	E_vs_z_T1 = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+	
 	hname = "Theta_T1";
 	htitle = "Centre of mass angle with a time gate on T1 proton pulse;#theta_{CM} [deg];Counts per deg";
 	Theta_T1 = new TH1F( hname.data(), htitle.data(),  180, 0, 180.0 );
@@ -1354,7 +1354,7 @@ void ISSHistogrammer::MakeHists() {
 	hname = "Ex_T1";
 	htitle = "Excitation energy with a time gate on T1 proton pulse;Excitation energy [keV];Counts per 20 keV";
 	Ex_T1 = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+	
 	hname = "E_vs_theta_T1";
 	htitle = "Energy vs. centre of mass angle with a time gate on T1 proton pulse;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
 	E_vs_theta_T1 = new TH2F( hname.data(), htitle.data(), 180, 0, 180.0, 800, 0, 16000  );
@@ -1379,7 +1379,7 @@ void ISSHistogrammer::MakeHists() {
 	E_vs_theta_T1_cut.resize( react->GetNumberOfEvsZCuts() );
 	Ex_vs_theta_T1_cut.resize( react->GetNumberOfEvsZCuts() );
 	Ex_vs_z_T1_cut.resize( react->GetNumberOfEvsZCuts() );
-
+	
 	for( unsigned int j = 0; j < react->GetNumberOfEvsZCuts(); ++j ) {
 		
 		dirname = "T1Mode/cut_" + std::to_string(j);
@@ -1390,7 +1390,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Energy vs. z distance for user cut " + std::to_string(j);
 		htitle += " with a time gate on T1 proton pulse;z [mm];Energy [keV];Counts per mm per 20 keV";
 		E_vs_z_T1_cut[j] = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 800, 0, 16000 );
-
+		
 		hname = "Theta_T1_cut"+ std::to_string(j);
 		htitle = "Centre of mass angle for user cut " + std::to_string(j);
 		htitle += " with a time gate on T1 proton pulse;#theta_{CM} [deg];Counts per deg";
@@ -1400,7 +1400,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "Excitation energy for user cut " + std::to_string(j);
 		htitle += " with a time gate on T1 proton pulse;Excitation energy [keV];Counts per 20 keV";
 		Ex_T1_cut[j] = new TH1F( hname.data(), htitle.data(), 1000, -5000, 15000 );
-
+		
 		hname = "E_vs_theta_T1_cut";
 		htitle = "Energy vs. centre of mass angle for user cut " + std::to_string(j);
 		htitle += " with a time gate on T1 proton pulse;#theta_{CM} [deg];Energy [keV];Counts per deg per 20 keV";
@@ -1409,7 +1409,7 @@ void ISSHistogrammer::MakeHists() {
 		hname = "Ex_vs_T1_cut" + std::to_string(j);
 		htitle = "Excitation energy as a function of time since T1 proton pulse;Event time - T1 [ns];Excitation energy [keV];Counts per 20 keV";
 		Ex_vs_T1_cut[j] = new TH2F( hname.data(), htitle.data(), 1000, 0, 100e9, 1000, -5000, 15000 );
-
+		
 		hname = "Ex_vs_theta_T1_cut" + std::to_string(j);
 		htitle = "Excitation energy vs. centre of mass angle for user cut " + std::to_string(j);
 		htitle += " with a time gate on T1 proton pulse;#theta_{CM} [deg];Excitation energy [keV];Counts per deg per 20 keV";
@@ -1421,7 +1421,7 @@ void ISSHistogrammer::MakeHists() {
 		Ex_vs_z_T1_cut[j] = new TH2F( hname.data(), htitle.data(), zbins.size()-1, zbins.data(), 1000, -5000, 15000 );
 		
 	} // Array
-
+	
 	
 	// For timing
 	dirname = "Timing";
@@ -1578,31 +1578,37 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "fission dE-E plot";
 		htitle += " - singles;Rest energy, E [keV];Energy loss, dE [keV];Counts";
 		fission_EdE = new TH2F( hname.data(), htitle.data(),
-								 4000, 0, 800000, 4000, 0, 800000 );
+							   4000, 0, 800000, 4000, 0, 800000 );
 		
-		hname = "fission_EdE_cut";
+		hname = "fission_EdE_cutH";
 		htitle = "fission dE-E plot";
-		htitle += " - with energy cut;Rest energy, E [keV];Energy loss, dE [keV];Counts";
-		fission_EdE_cut = new TH2F( hname.data(), htitle.data(),
-									 4000, 0, 800000, 4000, 0, 800000 );
+		htitle += " - with energy cut on the heavy fragment;Rest energy, E [keV];Energy loss, dE [keV];Counts";
+		fission_EdE_cutH = new TH2F( hname.data(), htitle.data(),
+								   4000, 0, 800000, 4000, 0, 800000 );
+		
+		hname = "fission_EdE_cutL";
+		htitle = "fission dE-E plot";
+		htitle += " - with energy cut on the light fragment;Rest energy, E [keV];Energy loss, dE [keV];Counts";
+		fission_EdE_cutL = new TH2F( hname.data(), htitle.data(),
+								   4000, 0, 800000, 4000, 0, 800000 );
 		
 		hname = "fission_EdE_array";
 		htitle = "fission dE-E plot";
 		htitle += " - in coincidence with array;Rest energy, E [keV];Energy loss, dE [keV];Counts";
 		fission_EdE_array = new TH2F( hname.data(), htitle.data(),
-									   4000, 0, 800000, 4000, 0, 800000 );
+									 4000, 0, 800000, 4000, 0, 800000 );
 		
 		hname = "fission_bragg";
 		htitle = "fission Bragg plot";
 		htitle += ";Bragg ID;Energy loss, dE [keV];Counts";
 		fission_bragg = new TH2F( hname.data(), htitle.data(),
-								   set->GetNumberOfCDLayers(), -0.5, set->GetNumberOfCDLayers()-0.5, 4000, 0, 800000 );
+								 set->GetNumberOfCDLayers(), -0.5, set->GetNumberOfCDLayers()-0.5, 4000, 0, 800000 );
 		
 		hname = "fission_dE_vs_T1";
 		htitle = "fission dE plot versus T1 time";
 		htitle += ";Time since T1 proton pulse [ns];Energy loss, dE [keV];Counts";
 		fission_dE_vs_T1 = new TH2F( hname.data(), htitle.data(),
-									  5000, 0, 50e9, 4000, 0, 800000 );
+									5000, 0, 50e9, 4000, 0, 800000 );
 		
 		hname = "fission_dE_eloss";
 		htitle = "fission dE energy loss";
@@ -1627,7 +1633,7 @@ void ISSHistogrammer::MakeHists() {
 			htitle += " and array module " + std::to_string(j);
 			htitle += ";#Deltat;Counts";
 			fission_array_td[j] = new TH1F( hname.data(), htitle.data(),
-											 1000, -1.0*set->GetEventWindow()-50, 1.0*set->GetEventWindow()+50 );
+										   1000, -1.0*set->GetEventWindow()-50, 1.0*set->GetEventWindow()+50 );
 			
 		}
 		
@@ -1639,20 +1645,20 @@ void ISSHistogrammer::MakeHists() {
 			htitle += " and ELUM sector " + std::to_string(j);
 			htitle += ";#Deltat;Counts";
 			fission_elum_td[j] = new TH1F( hname.data(), htitle.data(),
-											1000, -1.0*set->GetEventWindow()-50, 1.0*set->GetEventWindow()+50 );
+										  1000, -1.0*set->GetEventWindow()-50, 1.0*set->GetEventWindow()+50 );
 			
 		}
-			
+		
 		// fission-array time walk
 		output_file->cd( "Timing" );
 		fission_array_tw_hit0 = new TH2F( "tw_fission_array_hit0",
-										"Time-walk histogram for array-fission coincidences with hit bit false;#Deltat [ns];Array energy [keV];Counts",
-										1000, -1.0*set->GetEventWindow(), 1.0*set->GetEventWindow(),
-										800, 0, 16000 );
+										 "Time-walk histogram for array-fission coincidences with hit bit false;#Deltat [ns];Array energy [keV];Counts",
+										 1000, -1.0*set->GetEventWindow(), 1.0*set->GetEventWindow(),
+										 800, 0, 16000 );
 		fission_array_tw_hit1 = new TH2F( "tw_fission_array_hit1",
-										"Time-walk histogram for array-fission coincidences with hit bit true;#Deltat [ns];Array energy [keV];Counts",
-										1000, -1.0*set->GetEventWindow(), 1.0*set->GetEventWindow(),
-										800, 0, 16000 );
+										 "Time-walk histogram for array-fission coincidences with hit bit true;#Deltat [ns];Array energy [keV];Counts",
+										 1000, -1.0*set->GetEventWindow(), 1.0*set->GetEventWindow(),
+										 800, 0, 16000 );
 		fission_array_tw_hit0_prof = new TProfile( "tw_fission_array_hit0_prof", "Time-walk profile for fission-array coincidences with hit bit false;Array energy;#Delta t", 2000, 0, 60000 );
 		fission_array_tw_hit1_prof = new TProfile( "tw_fission_array_hit1_prof", "Time-walk profile for fission-array coincidences with hit bit true;Array energy;#Delta t", 2000, 0, 60000 );
 		
@@ -1672,20 +1678,20 @@ void ISSHistogrammer::MakeHists() {
 				htitle = "Time-walk histogram for array-fission coincidences (module ";
 				htitle += std::to_string(i) + ", row " + std::to_string(j) + ") with hit bit false;Deltat [ns];Array energy [keV];Counts";
 				fission_array_tw_hit0_row[i][j] = new TH2F( hname.data(), htitle.data(), 1000, -1.0*set->GetEventWindow(), 1.0*set->GetEventWindow(),
-														  800, 0, 16000 );
+														   800, 0, 16000 );
 				
 				hname = "tw_fission_array_hit1_mod_" + std::to_string(i) + "_row" + std::to_string(j);
 				htitle = "Time-walk histogram for array-fission coincidences (module ";
 				htitle += std::to_string(i) + ", row " + std::to_string(j) + ") with hit bit true;Deltat [ns];Array energy [keV];Counts";
 				fission_array_tw_hit1_row[i][j] = new TH2F( hname.data(), htitle.data(), 1000, -1.0*set->GetEventWindow(), 1.0*set->GetEventWindow(),
-														  800, 0, 16000 );
+														   800, 0, 16000 );
 				
 			}
 			
 		}
 		
 	} // fission
-
+	
 	// EBIS time windows
 	output_file->cd( "Timing" );
 	ebis_td_array = new TH1F( "ebis_td_array", "Array time with respect to EBIS;#Deltat;Counts per 20 #mus", 5.5e3, -0.1e8, 1e8  );
@@ -1716,7 +1722,7 @@ void ISSHistogrammer::MakeHists() {
 	elum_ebis_on = new TH1F( "elum_ebis_on", "ELUM gated on EBIS;Energy (keV);Counts per 5 keV", 10000, 0, 50000 );
 	elum_ebis_off = new TH1F( "elum_ebis_off", "ELUM gated off EBIS;Energy (keV);Counts per 5 keV", 10000, 0, 50000 );
 	elum_vs_T1 = new TH2F( "elum_vs_T1", "ELUM energy versus T1 time (gated on EBIS);Energy (keV);Counts per 5 keV", 5000, 0, 50e9, 10000, 0, 50000 );
-
+	
 	// Recoils only if we are not doing fission
 	if( !react->IsFission() ) {
 		elum_recoil = new TH1F( "elum_recoil", "ELUM gated on recoils;Energy (keV);Counts per 5 keV", 10000, 0, 50000 );
@@ -1730,12 +1736,12 @@ void ISSHistogrammer::MakeHists() {
 		elum_fission_random = new TH1F( "elum_fission_random", "ELUM with time-random gate on fission fragments;Energy (keV);Counts per 5 keV", 10000, 0, 50000 );
 		elum_fissionT_random = new TH1F( "elum_fissionT_random", "ELUM with random time gate on all fission fragments;Energy (keV);Counts per 5 keV", 10000, 0, 50000 );
 	}
-
+	
 	elum_sec.resize( set->GetNumberOfELUMSectors() );
 	elum_ebis_sec.resize( set->GetNumberOfELUMSectors() );
 	elum_ebis_on_sec.resize( set->GetNumberOfELUMSectors() );
 	elum_ebis_off_sec.resize( set->GetNumberOfELUMSectors() );
-
+	
 	if( !react->IsFission() ) {
 		elum_recoil_sec.resize( set->GetNumberOfELUMSectors() );
 		elum_recoilT_sec.resize( set->GetNumberOfELUMSectors() );
@@ -1748,7 +1754,7 @@ void ISSHistogrammer::MakeHists() {
 		elum_fission_random_sec.resize( set->GetNumberOfELUMSectors() );
 		elum_fissionT_random_sec.resize( set->GetNumberOfELUMSectors() );
 	}
-
+	
 	for( unsigned int j = 0; j < set->GetNumberOfELUMSectors(); ++j ) {
 		
 		dirname = "ElumDetector/sector_" + std::to_string(j);
@@ -1826,7 +1832,7 @@ void ISSHistogrammer::MakeHists() {
 		}
 		
 	} // ELUM
-
+	
 	// For LUME detectors
 	dirname = "LumeDetector";
 	output_file->mkdir( dirname.data() );
@@ -1898,7 +1904,7 @@ void ISSHistogrammer::MakeHists() {
 		htitle = "LUME energy vs position spectrum for detecor " + std::to_string(i);
 		htitle += " gated off EBIS;Position;Energy [keV]";
 		lume_E_vs_x_ebis_off_det[i] = new TH2F( hname.data(), htitle.data(), 400, -2., 2., 1640, -200, 8000 );
-
+		
 	} // LUME
 	
 	output_file->cd();
@@ -1914,7 +1920,7 @@ void ISSHistogrammer::ResetHists() {
 	ebis_td_array->Reset("ICESM");
 	ebis_td_elum->Reset("ICESM");
 	ebis_td_lume->Reset("ICESM");
-
+	
 	// Recoils, but only if we are not doing fission
 	if( !react->IsFission() ) {
 		
@@ -1923,7 +1929,7 @@ void ISSHistogrammer::ResetHists() {
 		sc_td_recoil->Reset("ICESM");
 		recoil_array_tw_hit0->Reset("ICESM");
 		recoil_array_tw_hit1->Reset("ICESM");
-
+		
 		for( unsigned int i = 0; i < recoil_array_td.size(); ++i )
 			for( unsigned int j = 0; j < recoil_array_td[i].size(); ++j )
 				recoil_array_td[i][j]->Reset("ICESM");
@@ -1970,10 +1976,10 @@ void ISSHistogrammer::ResetHists() {
 		fission_array_tw_hit1->Reset("ICESM");
 		
 		for( unsigned int i = 0; i < fission_array_td.size(); ++i )
-				fission_array_td[i]->Reset("ICESM");
+			fission_array_td[i]->Reset("ICESM");
 		
 		for( unsigned int i = 0; i < fission_elum_td.size(); ++i )
-				fission_elum_td[i]->Reset("ICESM");
+			fission_elum_td[i]->Reset("ICESM");
 		
 		for( unsigned int i = 0; i < fission_array_tw_hit0_row.size(); ++i )
 			for( unsigned int j = 0; j < fission_array_tw_hit0_row[i].size(); ++j )
@@ -1984,7 +1990,8 @@ void ISSHistogrammer::ResetHists() {
 				fission_array_tw_hit1_row[i][j]->Reset("ICESM");
 		
 		fission_EdE->Reset("ICESM");
-		fission_EdE_cut->Reset("ICESM");
+		fission_EdE_cutH->Reset("ICESM");
+		fission_EdE_cutL->Reset("ICESM");
 		fission_bragg->Reset("ICESM");
 		fission_dE_vs_T1->Reset("ICESM");
 		fission_dE_eloss->Reset("ICESM");
@@ -2070,7 +2077,7 @@ void ISSHistogrammer::ResetHists() {
 	Ex_vs_theta_ebis_on->Reset("ICESM");
 	Ex_vs_theta_ebis_off->Reset("ICESM");
 	Ex_vs_theta_T1->Reset("ICESM");
-
+	
 	if( !react->IsFission() ) {
 		
 		Ex_vs_theta_recoil->Reset("ICESM");
@@ -2157,20 +2164,20 @@ void ISSHistogrammer::ResetHists() {
 	
 	for( unsigned int i = 0; i < Ex_vs_theta_cut.size(); ++i )
 		Ex_vs_theta_cut[i]->Reset("ICESM");
-
+	
 	for( unsigned int i = 0; i < Ex_vs_theta_T1_cut.size(); ++i )
 		Ex_vs_theta_T1_cut[i]->Reset("ICESM");
 	
 	for( unsigned int i = 0; i < Ex_vs_theta_ebis_off_cut.size(); ++i )
 		Ex_vs_theta_ebis_off_cut[i]->Reset("ICESM");
-
+	
 	// Array - E vs. theta
 	E_vs_theta->Reset("ICESM");
 	E_vs_theta_ebis->Reset("ICESM");
 	E_vs_theta_ebis_on->Reset("ICESM");
 	E_vs_theta_ebis_off->Reset("ICESM");
 	E_vs_theta_T1->Reset("ICESM");
-
+	
 	if( !react->IsFission() ) {
 		
 		E_vs_theta_recoil->Reset("ICESM");
@@ -2270,7 +2277,7 @@ void ISSHistogrammer::ResetHists() {
 	Ex_vs_z_ebis_on->Reset("ICESM");
 	Ex_vs_z_ebis_off->Reset("ICESM");
 	Ex_vs_z_T1->Reset("ICESM");
-
+	
 	if( !react->IsFission() ) {
 		
 		Ex_vs_z_recoil->Reset("ICESM");
@@ -2339,7 +2346,7 @@ void ISSHistogrammer::ResetHists() {
 	
 	for( unsigned int i = 0; i < Ex_vs_z_T1_cut.size(); ++i )
 		Ex_vs_z_T1_cut[i]->Reset("ICESM");
-
+	
 	for( unsigned int i = 0; i < Ex_vs_z_mod.size(); ++i )
 		Ex_vs_z_mod[i]->Reset("ICESM");
 	
@@ -2371,7 +2378,7 @@ void ISSHistogrammer::ResetHists() {
 	Ex_ebis_off->Reset("ICESM");
 	Ex_T1->Reset("ICESM");
 	Ex_vs_T1->Reset("ICESM");
-
+	
 	if( !react->IsFission() ) {
 		
 		Ex_recoil->Reset("ICESM");
@@ -2467,14 +2474,14 @@ void ISSHistogrammer::ResetHists() {
 	
 	for( unsigned int i = 0; i < Ex_ebis_off_cut.size(); ++i )
 		Ex_ebis_off_cut[i]->Reset("ICESM");
-
+	
 	// Array - Theta
 	Theta->Reset("ICESM");
 	Theta_ebis->Reset("ICESM");
 	Theta_ebis_on->Reset("ICESM");
 	Theta_ebis_off->Reset("ICESM");
 	Theta_T1->Reset("ICESM");
-
+	
 	if( !react->IsFission() ) {
 		
 		Theta_recoil->Reset("ICESM");
@@ -2594,7 +2601,7 @@ void ISSHistogrammer::ResetHists() {
 		elum_recoilT->Reset("ICESM");
 		elum_recoil_random->Reset("ICESM");
 		elum_recoilT_random->Reset("ICESM");
-
+		
 		for( unsigned int i = 0; i < elum_recoil_sec.size(); ++i )
 			elum_recoil_sec[i]->Reset("ICESM");
 		
@@ -2641,7 +2648,7 @@ void ISSHistogrammer::ResetHists() {
 		lume_E_vs_x_ebis_on_det[i]->Reset("ICESM");
 		lume_E_vs_x_ebis_off_det[i]->Reset("ICESM");
 	}
-
+	
 	lume->Reset("ICESM");
 	lume_E_vs_x->Reset("ICESM");
 	lume_E_vs_x_wide->Reset("ICESM");
@@ -2652,7 +2659,7 @@ void ISSHistogrammer::ResetHists() {
 	lume_E_vs_x_ebis->Reset("ICESM");
 	lume_E_vs_x_ebis_on->Reset("ICESM");
 	lume_E_vs_x_ebis_off->Reset("ICESM");
-
+	
 	return;
 	
 }
@@ -2688,7 +2695,7 @@ unsigned long ISSHistogrammer::FillHists() {
 		// Check laser mode
 		if( react->GetLaserMode() == 0 && read_evts->GetLaserStatus() ) continue;
 		if( react->GetLaserMode() == 1 && !read_evts->GetLaserStatus() ) continue;
-
+		
 		// tdiff variable
 		double tdiff;
 		
@@ -2724,8 +2731,8 @@ unsigned long ISSHistogrammer::FillHists() {
 					output_tree->DropBaskets();
 				
 			}
-
-
+			
+			
 			// Singles
 			E_vs_z->Fill( react->GetZmeasured(), array_evt->GetEnergy() );
 			E_vs_z_mod[array_evt->GetModule()]->Fill( react->GetZmeasured(), array_evt->GetEnergy() );
@@ -2799,9 +2806,9 @@ unsigned long ISSHistogrammer::FillHists() {
 					E_vs_theta_T1->Fill( react->GetThetaCM() * TMath::RadToDeg(), array_evt->GetEnergy() );
 					Ex_vs_theta_T1->Fill( react->GetThetaCM() * TMath::RadToDeg(), react->GetEx() );
 					Ex_vs_z_T1->Fill( react->GetZmeasured(), react->GetEx() );
-				
+					
 				} // T1
-
+				
 				// Check the E vs z cuts from the user
 				for( unsigned int k = 0; k < react->GetNumberOfEvsZCuts(); ++k ){
 					
@@ -2831,9 +2838,9 @@ unsigned long ISSHistogrammer::FillHists() {
 							E_vs_theta_T1_cut[k]->Fill( react->GetThetaCM() * TMath::RadToDeg(), array_evt->GetEnergy() );
 							Ex_vs_theta_T1_cut[k]->Fill( react->GetThetaCM() * TMath::RadToDeg(), react->GetEx() );
 							Ex_vs_z_T1_cut[k]->Fill( react->GetZmeasured(), react->GetEx() );
-						
+							
 						} // T1
-
+						
 					} // inside cut
 					
 				} // loop over cuts
@@ -2879,7 +2886,7 @@ unsigned long ISSHistogrammer::FillHists() {
 					Ex_vs_z_T1->Fill( react->GetZmeasured(), react->GetEx(), -1.0 * react->GetEBISFillRatio() );
 					
 				} // T1
-
+				
 				// Check the E vs z cuts from the user
 				for( unsigned int k = 0; k < react->GetNumberOfEvsZCuts(); ++k ){
 					
@@ -2911,7 +2918,7 @@ unsigned long ISSHistogrammer::FillHists() {
 							Ex_vs_z_T1_cut[k]->Fill( react->GetZmeasured(), react->GetEx(), -1.0 * react->GetEBISFillRatio() );
 							
 						} // T1
-
+						
 					} // inside cut
 					
 				} // loop over cuts
@@ -3118,7 +3125,7 @@ unsigned long ISSHistogrammer::FillHists() {
 				} // random
 				
 			} // recoil mode finished
-				
+			
 		} // array
 		
 		// Loop over ELUM events
@@ -3142,7 +3149,7 @@ unsigned long ISSHistogrammer::FillHists() {
 				elum_ebis_on->Fill( elum_evt->GetEnergy() );
 				elum_ebis_on_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
 				elum_vs_T1->Fill( elum_evt->GetTime() - read_evts->GetT1(), elum_evt->GetEnergy() );
-
+				
 			} // ebis
 			
 			else {
@@ -3155,145 +3162,208 @@ unsigned long ISSHistogrammer::FillHists() {
 				
 			}
 			
-			// Loop over recoil events
+			// Coincidence with recoil/fission events
 			bool promptcheck = false;
 			bool randomcheck = false;
-			for( unsigned int k = 0; k < read_evts->GetRecoilMultiplicity(); ++k ){
-				
-				// Get recoil event
-				recoil_evt = read_evts->GetRecoilEvt(k);
-				
-				// Time differences
-				tdiff = recoil_evt->GetTime() - elum_evt->GetTime();
-				recoil_elum_td[recoil_evt->GetSector()][elum_evt->GetSector()]->Fill( tdiff );
-				
-				// Check for prompt events with recoils
-				if( PromptCoincidence( recoil_evt, elum_evt ) )
-					promptcheck = true;
-				
-				// Check for random events with recoils
-				if( RandomCoincidence( recoil_evt, elum_evt ) )
-					randomcheck = true;
-				
-			} // recoils
 			
-			// Plot the prompt events
-			if( promptcheck == true ){
+			// Fission mode
+			if( react->IsFission() ) {
 				
-				elum_recoilT->Fill( elum_evt->GetEnergy() );
-				elum_recoilT_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
-				
-				// Add an energy gate
-				if( RecoilCut( recoil_evt ) ) {
-					
-					elum_recoil->Fill( elum_evt->GetEnergy() );
-					elum_recoil_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
-					
-				} // energy cuts
-				
-			} // prompt
+			} // end of fission mode
 			
-			// Plot the random events, but only if we didn't already use it as a prompt
-			else if( randomcheck == true ){
-
-				elum_recoilT_random->Fill( elum_evt->GetEnergy() );
-				elum_recoilT_random_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
+			// Recoil mode
+			else {
 				
-				// Add an energy gate
-				if( RecoilCut( recoil_evt ) ) {
+				for( unsigned int k = 0; k < read_evts->GetRecoilMultiplicity(); ++k ){
 					
-					elum_recoil_random->Fill( elum_evt->GetEnergy() );
-					elum_recoil_random_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
+					// Get recoil event
+					recoil_evt = read_evts->GetRecoilEvt(k);
 					
-				} // energy cuts
-
-			} // random
+					// Time differences
+					tdiff = recoil_evt->GetTime() - elum_evt->GetTime();
+					recoil_elum_td[recoil_evt->GetSector()][elum_evt->GetSector()]->Fill( tdiff );
+					
+					// Check for prompt events with recoils
+					if( PromptCoincidence( recoil_evt, elum_evt ) )
+						promptcheck = true;
+					
+					// Check for random events with recoils
+					if( RandomCoincidence( recoil_evt, elum_evt ) )
+						randomcheck = true;
+					
+				} // recoils
+				
+				// Plot the prompt events
+				if( promptcheck == true ){
+					
+					elum_recoilT->Fill( elum_evt->GetEnergy() );
+					elum_recoilT_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
+					
+					// Add an energy gate
+					if( RecoilCut( recoil_evt ) ) {
+						
+						elum_recoil->Fill( elum_evt->GetEnergy() );
+						elum_recoil_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
+						
+					} // energy cuts
+					
+				} // prompt
+				
+				// Plot the random events, but only if we didn't already use it as a prompt
+				else if( randomcheck == true ){
+					
+					elum_recoilT_random->Fill( elum_evt->GetEnergy() );
+					elum_recoilT_random_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
+					
+					// Add an energy gate
+					if( RecoilCut( recoil_evt ) ) {
+						
+						elum_recoil_random->Fill( elum_evt->GetEnergy() );
+						elum_recoil_random_sec[elum_evt->GetSector()]->Fill( elum_evt->GetEnergy() );
+						
+					} // energy cuts
+					
+				} // random
+				
+			} // end of recoil mode
 			
 		} // ELUM
 		
 		
-		// Loop over recoil events
-		for( unsigned int j = 0; j < read_evts->GetRecoilMultiplicity(); ++j ){
+		// Fission mode
+		if( react->IsFission() ) {
 			
-			// Get recoil event
-			recoil_evt = read_evts->GetRecoilEvt(j);
+			// Loop over CD events
+			for( unsigned int j = 0; j < read_evts->GetCDMultiplicity(); ++j ){
+				
+				// Get CD event
+				cd_evt1 = read_evts->GetCDEvt(j);
+				
+				// EBIS, T1, SC time
+				ebis_td_fission->Fill( cd_evt1->GetTime() - read_evts->GetEBIS() );
+				t1_td_fission->Fill( cd_evt1->GetTime() - read_evts->GetT1() );
+				sc_td_fission->Fill( cd_evt1->GetTime() - read_evts->GetSC() );
+				
+				// Energy EdE plot, unconditioned
+				fission_EdE->Fill( cd_evt1->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
+								  cd_evt1->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				// Energy dE versus T1 time
+				fission_dE_vs_T1->Fill( cd_evt1->GetTime() - read_evts->GetT1(),
+									   cd_evt1->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				// Bragg curve
+				for( unsigned int k = 0; k < cd_evt1->GetEnergies().size(); ++k )
+					fission_bragg->Fill( cd_evt1->GetID(k), cd_evt1->GetEnergy(k) );
+				
+				// Energy EdE plot, after cut on heavy fragment
+				if( FissionCutHeavy( cd_evt1 ) )
+					fission_EdE_cutH->Fill( cd_evt1->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
+										   cd_evt1->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				// Energy EdE plot, after cut on light fragment
+				if( FissionCutLight( cd_evt1 ) )
+					fission_EdE_cutL->Fill( cd_evt1->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
+										   cd_evt1->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				fission_dE_eloss->Fill( cd_evt1->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				fission_E_eloss->Fill( cd_evt1->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ) );
+				
+			} // cd events
 			
-			// EBIS, T1, SC time
-			ebis_td_recoil->Fill( recoil_evt->GetTime() - read_evts->GetEBIS() );
-			t1_td_recoil->Fill( recoil_evt->GetTime() - read_evts->GetT1() );
-			sc_td_recoil->Fill( recoil_evt->GetTime() - read_evts->GetSC() );
-
-			// Energy EdE plot, unconditioned
-			recoil_EdE[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
-													  recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
-
-			// Energy dE versus T1 time
-			recoil_dE_vs_T1[recoil_evt->GetSector()]->Fill( recoil_evt->GetTime() - read_evts->GetT1(),
-														   recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
-
-			// Bragg curve
-			for( unsigned int k = 0; k < recoil_evt->GetEnergies().size(); ++k )
-				recoil_bragg[recoil_evt->GetSector()]->Fill( recoil_evt->GetID(k), recoil_evt->GetEnergy(k) );
+		} // end of fission mode
+		
+		// Recoil mode
+		else {
 			
-			// Energy EdE plot, after cut
-			if( RecoilCut( recoil_evt ) )
-				recoil_EdE_cut[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
-															  recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+			// Loop over recoil events
+			for( unsigned int j = 0; j < read_evts->GetRecoilMultiplicity(); ++j ){
+				
+				// Get recoil event
+				recoil_evt = read_evts->GetRecoilEvt(j);
+				
+				// EBIS, T1, SC time
+				ebis_td_recoil->Fill( recoil_evt->GetTime() - read_evts->GetEBIS() );
+				t1_td_recoil->Fill( recoil_evt->GetTime() - read_evts->GetT1() );
+				sc_td_recoil->Fill( recoil_evt->GetTime() - read_evts->GetSC() );
+				
+				// Energy EdE plot, unconditioned
+				recoil_EdE[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
+														  recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				// Energy dE versus T1 time
+				recoil_dE_vs_T1[recoil_evt->GetSector()]->Fill( recoil_evt->GetTime() - read_evts->GetT1(),
+															   recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				// Bragg curve
+				for( unsigned int k = 0; k < recoil_evt->GetEnergies().size(); ++k )
+					recoil_bragg[recoil_evt->GetSector()]->Fill( recoil_evt->GetID(k), recoil_evt->GetEnergy(k) );
+				
+				// Energy EdE plot, after cut
+				if( RecoilCut( recoil_evt ) )
+					recoil_EdE_cut[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ),
+																  recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				
+				recoil_dE_eloss[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
+				recoil_E_eloss[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ) );
+				
+			} // recoils
 			
-			recoil_dE_eloss[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyLoss( set->GetRecoilEnergyLossStart(), set->GetRecoilEnergyLossStop() ) );
-			recoil_E_eloss[recoil_evt->GetSector()]->Fill( recoil_evt->GetEnergyRest( set->GetRecoilEnergyRestStart(), set->GetRecoilEnergyRestStop() ) );
-
-		} // recoils
-
+		} // end of recoil mode
+		
 		// Loop over LUME events
 		for( unsigned int j = 0; j < read_evts->GetLumeMultiplicity(); ++j ){
+			
 			// Get LUME event
 			lume_evt = read_evts->GetLumeEvt(j);
-
+			
 			int det_id = lume_evt->GetID();
-			if (det_id >= set->GetNumberOfLUMEDetectors()){
-			  std::cerr << "Bad LUME detector ID " << det_id << ". Only " << set->GetNumberOfLUMEDetectors()
-						<< " detectors are set. Ignoring this event for histogramming." << std::endl;
-			  continue;
+			if( det_id >= set->GetNumberOfLUMEDetectors() ){
+				std::cerr << "Bad LUME detector ID " << det_id << ". Only " << set->GetNumberOfLUMEDetectors();
+				std::cerr << " detectors are set. Ignoring this event for histogramming." << std::endl;
+				continue;
 			}
-
+			
 			// EBIS time
 			ebis_td_lume->Fill( lume_evt->GetTime() - read_evts->GetEBIS() );
-
+			
 			// Singles
 			lume->Fill( lume_evt->GetBE() );
 			lume_det[det_id]->Fill( lume_evt->GetBE() );
-
+			
 			// E versus x
 			lume_E_vs_x->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
 			lume_E_vs_x_wide->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
 			lume_E_vs_x_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1 );
-
+			
 			// Check for events in the EBIS on-beam window
 			if( OnBeam( lume_evt ) ){
-
-			  lume_vs_T1->Fill( lume_evt->GetTime() - read_evts->GetT1(), lume_evt->GetBE() );
-			  lume_ebis_on->Fill( lume_evt->GetBE() );
-			  lume_E_vs_x_ebis->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
-			  lume_E_vs_x_ebis_on->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
-
-			  lume_ebis_on_det[det_id]->Fill( lume_evt->GetBE() );
-			  lume_E_vs_x_ebis_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
-			  lume_E_vs_x_ebis_on_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				
+				lume_vs_T1->Fill( lume_evt->GetTime() - read_evts->GetT1(), lume_evt->GetBE() );
+				lume_ebis_on->Fill( lume_evt->GetBE() );
+				lume_E_vs_x_ebis->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				lume_E_vs_x_ebis_on->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				
+				lume_ebis_on_det[det_id]->Fill( lume_evt->GetBE() );
+				lume_E_vs_x_ebis_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				lume_E_vs_x_ebis_on_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				
 			}
-
+			
 			else {
-
-			  lume_ebis_off->Fill( lume_evt->GetBE() );
-			  lume_ebis_off_det[det_id]->Fill( lume_evt->GetBE() );
-
-			  lume_E_vs_x_ebis->Fill( lume_evt->GetX(),lume_evt->GetBE(),-1.* react->GetEBISFillRatio() );
-			  lume_E_vs_x_ebis_off->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
-			  lume_E_vs_x_ebis_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),-1.* react->GetEBISFillRatio() );
-			  lume_E_vs_x_ebis_off_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				
+				lume_ebis_off->Fill( lume_evt->GetBE() );
+				lume_ebis_off_det[det_id]->Fill( lume_evt->GetBE() );
+				
+				lume_E_vs_x_ebis->Fill( lume_evt->GetX(),lume_evt->GetBE(),-1.* react->GetEBISFillRatio() );
+				lume_E_vs_x_ebis_off->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				lume_E_vs_x_ebis_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),-1.* react->GetEBISFillRatio() );
+				lume_E_vs_x_ebis_off_det[det_id]->Fill( lume_evt->GetX(),lume_evt->GetBE(),1. );
+				
 			} // ebis
+			
 		}
-
+		
 		// Progress bar
 		bool update_progress = false;
 		if( n_entries < 200 )
@@ -3320,7 +3390,7 @@ unsigned long ISSHistogrammer::FillHists() {
 			std::cout.flush();
 			
 		}
-
+		
 	} // all events
 	
 	// Force the rest of the events in the buffer to disk
@@ -3381,7 +3451,7 @@ void ISSHistogrammer::SetPace4File( std::vector<std::string> input_file_names ) 
 		ReadPace4File( input_file_names[i] );
 		
 	}
-
+	
 	return;
 	
 }
@@ -3394,7 +3464,7 @@ void ISSHistogrammer::SetPace4File( std::string input_file_name ) {
 	read_evts = new ISSEvts;
 	input_tree->Branch( "ISSEvts", "ISSEvts", &read_evts );
 	input_tree->SetDirectory(0);
-
+	
 	ReadPace4File( input_file_name );
 	
 	return;
@@ -3414,14 +3484,14 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 	// Remember the ejectile
 	unsigned int Zp = pace4react->GetEjectile()->GetZ();
 	unsigned int Ap = pace4react->GetEjectile()->GetA();
-
+	
 	// Default reaction stuff
 	double z0 = pace4react->GetArrayDistance();
 	
 	// Need an array event objects for later
 	array_evt = std::make_unique<ISSArrayEvt>();
 	arrayp_evt = std::make_unique<ISSArrayPEvt>();
-
+	
 	// Random generator
 	TRandom3 rand;
 	
@@ -3451,7 +3521,7 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 	// Record position in the file to return to later
 	std::streampos data_start = pace4file.tellg();
 	std::ios_base::iostate file_state = pace4file.rdstate();
-
+	
 	// Count the number of data
 	unsigned long number_of_data = 0;
 	while( std::getline( pace4file, line ) && !pace4file.eof() )
@@ -3470,10 +3540,10 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 		// Clear the old data and increment counter
 		read_evts->ClearEvt();
 		current_data++;
-
+		
 		// Skip over really short lines
 		if( line.length() < 10 ) continue;
-
+		
 		// Read in data
 		line_ss.clear();
 		line_ss.str("");
@@ -3508,17 +3578,17 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 		if( Ap_lab > 180.0 ) Ap_lab -= 2.0 * ( Ap_lab - 180.0 );
 		if( Ap_lab < 0.0 ) Ap_lab *= -1.0;
 		Ap_lab *= TMath::DegToRad();
-
+		
 		// particle ID is decay_mode
 		// 1: neutron - we don't care about these
 		if( decay_mode == 1 ) continue;
-
+		
 		// 2: proton
 		else if( decay_mode == 2 ) {
 			
 			pace4react->GetEjectile()->SetZ(1);
 			pace4react->GetEjectile()->SetA(1);
-
+			
 		}
 		
 		// 3: alpha
@@ -3526,7 +3596,7 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 			
 			pace4react->GetEjectile()->SetZ(2);
 			pace4react->GetEjectile()->SetA(4);
-
+			
 		}
 		
 		// Randomly generate the phi angle
@@ -3538,14 +3608,14 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 		
 		// Important z values
 		double z_meas = pace4react->GetZmeasured();
-
+		
 		// If we're not in the same hemisphere, forget it
 		if( z0 * z_meas < 0 ) continue;
-
+		
 		// Shift the z in to the array reference
 		if( z0 < 0. ) z_meas = -1.0 * z_meas + z0;
 		else z_meas -= z0;
-
+		
 		// Find out where we hit the array
 		int mod = array_evt->FindModule( phi_det );
 		int row = array_evt->FindRow( z_meas );
@@ -3567,10 +3637,10 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 			arrayp_evt->SetEvent( Edet, Edet, pid, nid, 1e6, 1e6, true, true, mod, row );
 			read_evts->AddEvt( array_evt );
 			read_evts->AddEvt( arrayp_evt );
-
+			
 			// Fill the tree
 			input_tree->Fill();
-		
+			
 		}
 		
 		// Progress bar
@@ -3578,7 +3648,7 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 		if( number_of_data < 200 )
 			update_progress = true;
 		else if( current_data % (number_of_data/100) == 0 ||
-				 current_data == number_of_data )
+				current_data == number_of_data )
 			update_progress = true;
 		
 		if( update_progress ) {
@@ -3600,13 +3670,13 @@ void ISSHistogrammer::ReadPace4File( std::string input_file_name ) {
 			std::cout.flush();
 			
 		} // progress bar
-			
+		
 	}
-
+	
 	// Reset the ejectile before we finish
 	pace4react->GetEjectile()->SetZ(Zp);
 	pace4react->GetEjectile()->SetA(Ap);
-
+	
 	
 	// Close file and return
 	pace4file.close();
