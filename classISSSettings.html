@@ -651,6 +651,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:af73a1695ef492d7f245f2908573117bc" id="r_af73a1695ef492d7f245f2908573117bc"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af73a1695ef492d7f245f2908573117bc">n_cd_ring</a></td></tr>
 <tr class="memdesc:af73a1695ef492d7f245f2908573117bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of CD detector rings for each detector.  <br /></td></tr>
 <tr class="separator:af73a1695ef492d7f245f2908573117bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8543fabb36c472625872923078ee3645" id="r_a8543fabb36c472625872923078ee3645"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8543fabb36c472625872923078ee3645">n_cd_side</a></td></tr>
+<tr class="memdesc:a8543fabb36c472625872923078ee3645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of CD sides, it's always 2, i.e. p-side and n-side.  <br /></td></tr>
+<tr class="separator:a8543fabb36c472625872923078ee3645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a630c3f6ab04364990e978b8060ea2c80" id="r_a630c3f6ab04364990e978b8060ea2c80"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630c3f6ab04364990e978b8060ea2c80">cd_eloss_start</a></td></tr>
 <tr class="memdesc:a630c3f6ab04364990e978b8060ea2c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start layer for integrating energy loss, 0 for Silicon, about 1 for gas.  <br /></td></tr>
 <tr class="separator:a630c3f6ab04364990e978b8060ea2c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -670,23 +673,23 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a48fbc06a9a7ba900dae7bfbc5d20d0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop layer for integrating energy total, 1 for Silicon, about 8 for gas.  <br /></td></tr>
 <tr class="separator:a48fbc06a9a7ba900dae7bfbc5d20d0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9b1e6a2b9d815f1cd25a966937941c4" id="r_ae9b1e6a2b9d815f1cd25a966937941c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; unsigned char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9b1e6a2b9d815f1cd25a966937941c4">cd_vme</a></td></tr>
-<tr class="memdesc:ae9b1e6a2b9d815f1cd25a966937941c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of VME crate numbers for each CD detector layer, each ring, and each sector.  <br /></td></tr>
+<tr class="memdesc:ae9b1e6a2b9d815f1cd25a966937941c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of VME crate numbers for each CD detector layer, each side and each strip.  <br /></td></tr>
 <tr class="separator:ae9b1e6a2b9d815f1cd25a966937941c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a922603d02af6a100aa7e8f2fd191b820" id="r_a922603d02af6a100aa7e8f2fd191b820"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; unsigned char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922603d02af6a100aa7e8f2fd191b820">cd_mod</a></td></tr>
-<tr class="memdesc:a922603d02af6a100aa7e8f2fd191b820"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of module numbers for each CD detector layer, each ring, and each sector.  <br /></td></tr>
+<tr class="memdesc:a922603d02af6a100aa7e8f2fd191b820"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of module numbers for each CD detector layer, each ring/sector.  <br /></td></tr>
 <tr class="separator:a922603d02af6a100aa7e8f2fd191b820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a290b734277135a3c080d96f578f7ae72" id="r_a290b734277135a3c080d96f578f7ae72"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; unsigned char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a290b734277135a3c080d96f578f7ae72">cd_ch</a></td></tr>
-<tr class="memdesc:a290b734277135a3c080d96f578f7ae72"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of channel numbers for each CD detector layer, each ring, and each sector.  <br /></td></tr>
+<tr class="memdesc:a290b734277135a3c080d96f578f7ae72"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of channel numbers for each CD detector layer, each ring/sector.  <br /></td></tr>
 <tr class="separator:a290b734277135a3c080d96f578f7ae72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992ea1eb953a96da51f39110dff6d687" id="r_a992ea1eb953a96da51f39110dff6d687"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a992ea1eb953a96da51f39110dff6d687">cd_layer</a></td></tr>
 <tr class="memdesc:a992ea1eb953a96da51f39110dff6d687"><td class="mdescLeft">&#160;</td><td class="mdescRight">A channel map for the CD layers (-1 if not a CD)  <br /></td></tr>
 <tr class="separator:a992ea1eb953a96da51f39110dff6d687"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d07e31ad1637ba0310996802387732" id="r_a79d07e31ad1637ba0310996802387732"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79d07e31ad1637ba0310996802387732">cd_ring</a></td></tr>
-<tr class="memdesc:a79d07e31ad1637ba0310996802387732"><td class="mdescLeft">&#160;</td><td class="mdescRight">A channel map for the CD rings (-1 if not a CD)  <br /></td></tr>
-<tr class="separator:a79d07e31ad1637ba0310996802387732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69f0e718d8d44529fc5be8903d292814" id="r_a69f0e718d8d44529fc5be8903d292814"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69f0e718d8d44529fc5be8903d292814">cd_sector</a></td></tr>
-<tr class="memdesc:a69f0e718d8d44529fc5be8903d292814"><td class="mdescLeft">&#160;</td><td class="mdescRight">A channel map for the CD sectors (-1 if not a CD)  <br /></td></tr>
-<tr class="separator:a69f0e718d8d44529fc5be8903d292814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274821432da286ea0eeb78784488f792" id="r_a274821432da286ea0eeb78784488f792"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274821432da286ea0eeb78784488f792">cd_strip</a></td></tr>
+<tr class="memdesc:a274821432da286ea0eeb78784488f792"><td class="mdescLeft">&#160;</td><td class="mdescRight">A channel map for the CD ring/sector IDs (-1 if not a CD)  <br /></td></tr>
+<tr class="separator:a274821432da286ea0eeb78784488f792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53636a382a7f43621faafae37b969f86" id="r_a53636a382a7f43621faafae37b969f86"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; char &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53636a382a7f43621faafae37b969f86">cd_side</a></td></tr>
+<tr class="memdesc:a53636a382a7f43621faafae37b969f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">A channel map for the CD sides (rings = 0, sectors = 1) (-1 if not a CD)  <br /></td></tr>
+<tr class="separator:a53636a382a7f43621faafae37b969f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to implement user "settings" to the ISS sort code. </p>
@@ -1412,7 +1415,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the layer of a CD event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00829">829</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00837">837</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -1467,7 +1470,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the layer of a CD event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00867">867</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00884">884</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -1523,7 +1526,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the layer of a CD event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00848">848</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00857">857</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -1660,7 +1663,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the sector or quadrant of a ELUM event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00702">702</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00710">710</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -1905,7 +1908,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return ID of LUME t detector (total energy signal)</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00809">809</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00817">817</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -1961,7 +1964,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the type of LUME detector signal by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00789">789</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00797">797</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -2125,7 +2128,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the axis number of an MWPC event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00653">653</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00661">661</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -2154,7 +2157,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the TAC number of an MWPC event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00673">673</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00681">681</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -2852,7 +2855,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00628">628</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00636">636</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -2875,7 +2878,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00594">594</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00602">602</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3093,7 +3096,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the sector or quadrant of a recoil event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00574">574</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00582">582</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3116,7 +3119,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00611">611</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00619">619</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3145,7 +3148,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the sector or quadrant of a recoil event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00554">554</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00562">562</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3282,7 +3285,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the detector ID of a ScintArray event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00761">761</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00769">769</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3500,7 +3503,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return the layer of a ZeroDegree event by module and channel number</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00731">731</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00739">739</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3637,7 +3640,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is a CD event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00886">886</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00911">911</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3666,7 +3669,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is an ELUM event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00693">693</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00701">701</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3695,7 +3698,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is an ScintArray event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00781">781</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00789">789</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3751,7 +3754,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is a MWPC event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00645">645</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00653">653</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3780,7 +3783,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is a recoil event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00546">546</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00554">554</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3809,7 +3812,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is an ScintArray event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00752">752</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00760">760</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3838,7 +3841,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Return true if this is an ZeroDegree event</p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00722">722</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00730">730</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -3857,7 +3860,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00894">894</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8cc_source.html#l00920">920</a> of file <a class="el" href="Settings_8cc_source.html">Settings.cc</a>.</p>
 
 </div>
 </div>
@@ -4316,9 +4319,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A list of channel numbers for each CD detector layer, each ring, and each sector. </p>
+<p>A list of channel numbers for each CD detector layer, each ring/sector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00350">350</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00351">351</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4370,7 +4373,7 @@ Private Attributes</h2></td></tr>
 
 <p>Start layer for integrating energy loss, 0 for Silicon, about 1 for gas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00342">342</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00343">343</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4396,7 +4399,7 @@ Private Attributes</h2></td></tr>
 
 <p>Stop layer for integrating energy loss, 0 for Silicon, about 1 for gas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00343">343</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00344">344</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4422,7 +4425,7 @@ Private Attributes</h2></td></tr>
 
 <p>Start layer for integrating energy rest, 1 for Silicon, about 5 for gas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00344">344</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00345">345</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4448,7 +4451,7 @@ Private Attributes</h2></td></tr>
 
 <p>Stop layer for integrating energy rest, 1 for Silicon, about 5 for gas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00345">345</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00346">346</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4474,7 +4477,7 @@ Private Attributes</h2></td></tr>
 
 <p>Start layer for integrating energy total, 0 for Silicon, 0 for gas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00346">346</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00347">347</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4500,7 +4503,7 @@ Private Attributes</h2></td></tr>
 
 <p>Stop layer for integrating energy total, 1 for Silicon, about 8 for gas. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00347">347</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00348">348</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4526,7 +4529,7 @@ Private Attributes</h2></td></tr>
 
 <p>A channel map for the CD layers (-1 if not a CD) </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00351">351</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00352">352</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4550,35 +4553,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A list of module numbers for each CD detector layer, each ring, and each sector. </p>
+<p>A list of module numbers for each CD detector layer, each ring/sector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00349">349</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
-
-</div>
-</div>
-<a id="a79d07e31ad1637ba0310996802387732" name="a79d07e31ad1637ba0310996802387732"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79d07e31ad1637ba0310996802387732">&#9670;&#160;</a></span>cd_ring</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;std::vector&lt;char&gt; &gt; &gt; ISSSettings::cd_ring</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A channel map for the CD rings (-1 if not a CD) </p>
-
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00352">352</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00350">350</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -4608,8 +4585,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a69f0e718d8d44529fc5be8903d292814" name="a69f0e718d8d44529fc5be8903d292814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69f0e718d8d44529fc5be8903d292814">&#9670;&#160;</a></span>cd_sector</h2>
+<a id="a53636a382a7f43621faafae37b969f86" name="a53636a382a7f43621faafae37b969f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53636a382a7f43621faafae37b969f86">&#9670;&#160;</a></span>cd_side</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4618,7 +4595,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;std::vector&lt;char&gt; &gt; &gt; ISSSettings::cd_sector</td>
+          <td class="memname">std::vector&lt;std::vector&lt;std::vector&lt;char&gt; &gt; &gt; ISSSettings::cd_side</td>
         </tr>
       </table>
   </td>
@@ -4628,7 +4605,33 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A channel map for the CD sectors (-1 if not a CD) </p>
+<p>A channel map for the CD sides (rings = 0, sectors = 1) (-1 if not a CD) </p>
+
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00354">354</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+
+</div>
+</div>
+<a id="a274821432da286ea0eeb78784488f792" name="a274821432da286ea0eeb78784488f792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a274821432da286ea0eeb78784488f792">&#9670;&#160;</a></span>cd_strip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;std::vector&lt;char&gt; &gt; &gt; ISSSettings::cd_strip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A channel map for the CD ring/sector IDs (-1 if not a CD) </p>
 
 <p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00353">353</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
@@ -4654,9 +4657,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A list of VME crate numbers for each CD detector layer, each ring, and each sector. </p>
+<p>A list of VME crate numbers for each CD detector layer, each side and each strip. </p>
 
-<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00348">348</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00349">349</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>
@@ -5691,6 +5694,32 @@ Private Attributes</h2></td></tr>
 <p>Number of CD detector sectors for each detector. </p>
 
 <p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00340">340</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
+
+</div>
+</div>
+<a id="a8543fabb36c472625872923078ee3645" name="a8543fabb36c472625872923078ee3645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8543fabb36c472625872923078ee3645">&#9670;&#160;</a></span>n_cd_side</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char ISSSettings::n_cd_side</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of CD sides, it's always 2, i.e. p-side and n-side. </p>
+
+<p class="definition">Definition at line <a class="el" href="Settings_8hh_source.html#l00342">342</a> of file <a class="el" href="Settings_8hh_source.html">Settings.hh</a>.</p>
 
 </div>
 </div>

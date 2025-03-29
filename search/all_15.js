@@ -73,7 +73,7 @@ var searchData=
   ['rf_70',['rf',['../classISSCalibration.html#a9c92e1284079bcb41d7d30d651f09396',1,'ISSCalibration::rf'],['../classISSReaction.html#a843c40e11d87b4f692be73d940c71399',1,'ISSReaction::rf']]],
   ['rfsim_71',['rfsim',['../classISSReaction.html#ad10963ba32970b7ff3c303bdd0c7d642',1,'ISSReaction']]],
   ['rid_5flist_72',['rid_list',['../classISSEventBuilder.html#a5e16e7234b96b8a8f0ad87db9357a48a',1,'ISSEventBuilder']]],
-  ['ring_73',['ring',['../structISSCDEvt_1_1Hit.html#a9504db261ba03f7e9087099ec35ede76',1,'ISSCDEvt::Hit']]],
+  ['ring_73',['ring',['../classISSCDEvt.html#af83e75b3848a1139c2b1baa96025ef63',1,'ISSCDEvt']]],
   ['root_74',['root',['../Reaction_8cc.html#adec064332fb7f7c5788d798dafbd9c7d',1,'Reaction.cc']]],
   ['rootlinkdef_2eh_75',['RootLinkDef.h',['../RootLinkDef_8h.html',1,'']]],
   ['row_76',['row',['../classISSArrayEvt.html#abbaf6332446f1ea1ddec8cfc975d57c2',1,'ISSArrayEvt::row'],['../classISSRxEvent.html#a247fb210ec58035945eca23051ff2dcc',1,'ISSRxEvent::row']]],

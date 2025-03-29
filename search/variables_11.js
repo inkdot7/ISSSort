@@ -51,7 +51,7 @@ var searchData=
   ['rf_48',['rf',['../classISSCalibration.html#a9c92e1284079bcb41d7d30d651f09396',1,'ISSCalibration::rf'],['../classISSReaction.html#a843c40e11d87b4f692be73d940c71399',1,'ISSReaction::rf']]],
   ['rfsim_49',['rfsim',['../classISSReaction.html#ad10963ba32970b7ff3c303bdd0c7d642',1,'ISSReaction']]],
   ['rid_5flist_50',['rid_list',['../classISSEventBuilder.html#a5e16e7234b96b8a8f0ad87db9357a48a',1,'ISSEventBuilder']]],
-  ['ring_51',['ring',['../structISSCDEvt_1_1Hit.html#a9504db261ba03f7e9087099ec35ede76',1,'ISSCDEvt::Hit']]],
+  ['ring_51',['ring',['../classISSCDEvt.html#af83e75b3848a1139c2b1baa96025ef63',1,'ISSCDEvt']]],
   ['root_52',['root',['../Reaction_8cc.html#adec064332fb7f7c5788d798dafbd9c7d',1,'Reaction.cc']]],
   ['row_53',['row',['../classISSArrayEvt.html#abbaf6332446f1ea1ddec8cfc975d57c2',1,'ISSArrayEvt::row'],['../classISSRxEvent.html#a247fb210ec58035945eca23051ff2dcc',1,'ISSRxEvent::row']]],
   ['rsec_5flist_54',['rsec_list',['../classISSEventBuilder.html#af291ddf99525c8a1fccac09213588b04',1,'ISSEventBuilder']]],
