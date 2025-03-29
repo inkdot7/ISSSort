@@ -133,7 +133,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad75dff2c1bbc19c8fbba6aa8a4e17ffd" id="r_ad75dff2c1bbc19c8fbba6aa8a4e17ffd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75dff2c1bbc19c8fbba6aa8a4e17ffd">SimulateEmission</a> (double en, double theta_lab, double phi_lab, int detector=0)</td></tr>
 <tr class="memdesc:ad75dff2c1bbc19c8fbba6aa8a4e17ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called during the simulation of particle emission.  <br /></td></tr>
 <tr class="separator:ad75dff2c1bbc19c8fbba6aa8a4e17ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4466215a5193636e202931d5642cd5a2" id="r_a4466215a5193636e202931d5642cd5a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4466215a5193636e202931d5642cd5a2">IsFission</a> ()</td></tr>
+<tr class="separator:a4466215a5193636e202931d5642cd5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af28ab9a3f969cd2d10cc19e1e3e7dad2" id="r_af28ab9a3f969cd2d10cc19e1e3e7dad2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af28ab9a3f969cd2d10cc19e1e3e7dad2">GetField</a> ()</td></tr>
+<tr class="memdesc:af28ab9a3f969cd2d10cc19e1e3e7dad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true/false if we are studying fission of the recoiling nucleus  <br /></td></tr>
 <tr class="separator:af28ab9a3f969cd2d10cc19e1e3e7dad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad19626b55d856b809f89846a8b409a13" id="r_ad19626b55d856b809f89846a8b409a13"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad19626b55d856b809f89846a8b409a13">GetField_corr</a> ()</td></tr>
 <tr class="memdesc:ad19626b55d856b809f89846a8b409a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the magnetic field strength.  <br /></td></tr>
@@ -297,8 +300,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea889a30bad06fd33af9036f0a27be18" id="r_aea889a30bad06fd33af9036f0a27be18"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; TCutG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea889a30bad06fd33af9036f0a27be18">GetRecoilCut</a> (unsigned int i)</td></tr>
 <tr class="memdesc:aea889a30bad06fd33af9036f0a27be18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the number of recoil cuts.  <br /></td></tr>
 <tr class="separator:aea889a30bad06fd33af9036f0a27be18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac635cfff884ece4cb84690e542e03dc9" id="r_ac635cfff884ece4cb84690e542e03dc9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; TCutG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac635cfff884ece4cb84690e542e03dc9">GetFissionCutHeavy</a> ()</td></tr>
+<tr class="memdesc:ac635cfff884ece4cb84690e542e03dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for particular recoil cuts.  <br /></td></tr>
+<tr class="separator:ac635cfff884ece4cb84690e542e03dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c8e4ae6fea6eee1658432fdef34d71" id="r_ae7c8e4ae6fea6eee1658432fdef34d71"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; TCutG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7c8e4ae6fea6eee1658432fdef34d71">GetFissionCutLight</a> ()</td></tr>
+<tr class="memdesc:ae7c8e4ae6fea6eee1658432fdef34d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the heavy fission fragment cut.  <br /></td></tr>
+<tr class="separator:ae7c8e4ae6fea6eee1658432fdef34d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a684530ef2eb00b5cb925a3bd9d9d1515" id="r_a684530ef2eb00b5cb925a3bd9d9d1515"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a684530ef2eb00b5cb925a3bd9d9d1515">GetNumberOfEvsZCuts</a> ()</td></tr>
-<tr class="memdesc:a684530ef2eb00b5cb925a3bd9d9d1515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for particular recoil cuts.  <br /></td></tr>
+<tr class="memdesc:a684530ef2eb00b5cb925a3bd9d9d1515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the light fission fragment cut.  <br /></td></tr>
 <tr class="separator:a684530ef2eb00b5cb925a3bd9d9d1515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c2575fe2de6dc16658f909bccbfaf69" id="r_a1c2575fe2de6dc16658f909bccbfaf69"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; TCutG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c2575fe2de6dc16658f909bccbfaf69">GetEvsZCut</a> (unsigned int i)</td></tr>
 <tr class="memdesc:a1c2575fe2de6dc16658f909bccbfaf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the number of E vs z cuts.  <br /></td></tr>
@@ -367,6 +376,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:acd2c7f71be4c423656d8b0efb606d45b" id="r_acd2c7f71be4c423656d8b0efb606d45b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd2c7f71be4c423656d8b0efb606d45b">Eb</a></td></tr>
 <tr class="memdesc:acd2c7f71be4c423656d8b0efb606d45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Laboratory beam energy in keV/u.  <br /></td></tr>
 <tr class="separator:acd2c7f71be4c423656d8b0efb606d45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f92a7787f133d6f868ce64aa25058ab" id="r_a5f92a7787f133d6f868ce64aa25058ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f92a7787f133d6f868ce64aa25058ab">fission</a></td></tr>
+<tr class="memdesc:a5f92a7787f133d6f868ce64aa25058ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if we are studying the fission of the recoiling nucleus.  <br /></td></tr>
+<tr class="separator:a5f92a7787f133d6f868ce64aa25058ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a843c40e11d87b4f692be73d940c71399" id="r_a843c40e11d87b4f692be73d940c71399"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; ROOT::Math::RootFinder &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a843c40e11d87b4f692be73d940c71399">rf</a></td></tr>
 <tr class="memdesc:a843c40e11d87b4f692be73d940c71399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a root finder object.  <br /></td></tr>
 <tr class="separator:a843c40e11d87b4f692be73d940c71399"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -491,12 +503,26 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a04a1fd09e0469d805fa94df73765dec6" id="r_a04a1fd09e0469d805fa94df73765dec6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04a1fd09e0469d805fa94df73765dec6">evszcutname</a></td></tr>
 <tr class="memdesc:a04a1fd09e0469d805fa94df73765dec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The names of the E vs z cuts.  <br /></td></tr>
 <tr class="separator:a04a1fd09e0469d805fa94df73765dec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae400ddbce2e8d6a6f12f7a97b2ade807" id="r_ae400ddbce2e8d6a6f12f7a97b2ade807"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae400ddbce2e8d6a6f12f7a97b2ade807">fissioncutHfile</a></td></tr>
+<tr class="separator:ae400ddbce2e8d6a6f12f7a97b2ade807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb7535bbd2b660cbbedc20245af90fa" id="r_aeeb7535bbd2b660cbbedc20245af90fa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeb7535bbd2b660cbbedc20245af90fa">fissioncutLfile</a></td></tr>
+<tr class="separator:aeeb7535bbd2b660cbbedc20245af90fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08f8ed8fb712053d3751b16636c7a3d" id="r_aa08f8ed8fb712053d3751b16636c7a3d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa08f8ed8fb712053d3751b16636c7a3d">fissioncutHname</a></td></tr>
+<tr class="separator:aa08f8ed8fb712053d3751b16636c7a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41bf1d8e01d37348c7c2ea3460e869da" id="r_a41bf1d8e01d37348c7c2ea3460e869da"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41bf1d8e01d37348c7c2ea3460e869da">fissioncutLname</a></td></tr>
+<tr class="separator:a41bf1d8e01d37348c7c2ea3460e869da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3519ad8827535df9af318cb271c2788a" id="r_a3519ad8827535df9af318cb271c2788a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; TCutG &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3519ad8827535df9af318cb271c2788a">recoil_cut</a></td></tr>
 <tr class="memdesc:a3519ad8827535df9af318cb271c2788a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing the recoil cuts.  <br /></td></tr>
 <tr class="separator:a3519ad8827535df9af318cb271c2788a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad84c32fc1188533e5da2ee8407cc13af" id="r_ad84c32fc1188533e5da2ee8407cc13af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; TCutG &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad84c32fc1188533e5da2ee8407cc13af">e_vs_z_cut</a></td></tr>
 <tr class="memdesc:ad84c32fc1188533e5da2ee8407cc13af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing the E vs z cuts.  <br /></td></tr>
 <tr class="separator:ad84c32fc1188533e5da2ee8407cc13af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43eb38e9d87097268731c69397ff9c75" id="r_a43eb38e9d87097268731c69397ff9c75"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; TCutG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43eb38e9d87097268731c69397ff9c75">fission_cutH</a></td></tr>
+<tr class="memdesc:a43eb38e9d87097268731c69397ff9c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heavy fission fragment cut.  <br /></td></tr>
+<tr class="separator:a43eb38e9d87097268731c69397ff9c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af076909d37c2814209943857b35c2a61" id="r_af076909d37c2814209943857b35c2a61"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; TCutG &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af076909d37c2814209943857b35c2a61">fission_cutL</a></td></tr>
+<tr class="memdesc:af076909d37c2814209943857b35c2a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Light fission fragment cut.  <br /></td></tr>
+<tr class="separator:af076909d37c2814209943857b35c2a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d5668b2abdd62b03825bfc655f6287" id="r_aa4d5668b2abdd62b03825bfc655f6287"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; TGraph &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4d5668b2abdd62b03825bfc655f6287">gStopping</a></td></tr>
 <tr class="memdesc:aa4d5668b2abdd62b03825bfc655f6287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of pointer to relevant stopping-power TGraphs relevant to the reaction of study.  <br /></td></tr>
 <tr class="separator:aa4d5668b2abdd62b03825bfc655f6287"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -653,7 +679,7 @@ Private Attributes</h2></td></tr>
 <p>Calculates the pulse height correction information from the SRIM data. </p>
 <p>Open stopping power files and make TGraphs of data</p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01000">1000</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01054">1054</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -680,7 +706,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00352">352</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00361">361</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -707,7 +733,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00354">354</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00363">363</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -734,7 +760,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00355">355</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00364">364</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -761,7 +787,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00353">353</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00362">362</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -790,7 +816,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the distance between the array and first silicon wafer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00203">203</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00204">204</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -819,7 +845,7 @@ Private Attributes</h2></td></tr>
 
 <p>Calculates magnetic field strength in MeV/ e*mm*c. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00202">202</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00203">203</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -848,7 +874,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for LaserMode value. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00230">230</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00231">231</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -877,7 +903,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns prompt window/random window. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00278">278</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00279">279</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -906,7 +932,7 @@ Private Attributes</h2></td></tr>
 
 <p>Calculates the beta factor for going between lab and CM frames. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00262">262</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00263">263</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -935,7 +961,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for array-recoil prompt time difference, used for defining coincidence windows. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00268">268</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00269">269</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -964,7 +990,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for array-recoil random time difference, used for defining coincidence windows. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00274">274</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00275">275</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -991,7 +1017,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00358">358</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00367">367</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1020,7 +1046,7 @@ Private Attributes</h2></td></tr>
 
 <p>Calculates the gamma factor for going between lab and CM frames. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00257">257</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00258">258</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1049,7 +1075,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the lab angle of the ejectile. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00210">210</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00211">211</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1078,7 +1104,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the z distance as ejectile returns to axis. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00211">211</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00212">212</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1107,7 +1133,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the EBIS time ratio. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00223">223</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00224">224</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1136,7 +1162,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the EBIS ON time. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00221">221</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00222">222</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1163,7 +1189,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00220">220</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00221">221</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1192,7 +1218,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the EBIS OFF time. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00222">222</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00223">223</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1245,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00360">360</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00369">369</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1248,7 +1274,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the ELUM outer radius. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00207">207</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00208">208</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1277,7 +1303,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the array dead layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00204">204</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00205">205</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1306,7 +1332,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the distance between the target and the ELUM silicon. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00205">205</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00206">206</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1335,7 +1361,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the ELUM inner radius. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00206">206</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00207">207</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1364,7 +1390,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns prompt window/random window. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00300">300</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00301">301</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1393,7 +1419,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for array-recoil fill ratio (unused?) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00284">284</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00285">285</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1422,7 +1448,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for elum-recoil prompt time difference, used for defining coincidence windows. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00290">290</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00291">291</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1451,7 +1477,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for elum-recoil random time difference, used for defining coincidence windows. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00296">296</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00297">297</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1491,7 +1517,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Ei-E The energy loss of a particular nuclide in a particular material </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00749">749</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00803">803</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -1520,7 +1546,7 @@ Private Attributes</h2></td></tr>
 
 <p>Calculates the total energy in the lab frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00245">245</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00246">246</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1549,7 +1575,7 @@ Private Attributes</h2></td></tr>
 
 <p>Calculates the Q value for the reaction. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00241">241</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00242">242</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1578,7 +1604,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the number of E vs z cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00335">335</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00344">344</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +1633,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the phi angle of the ejectile as it intercepts the detector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00215">215</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00216">216</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1634,7 +1660,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00200">200</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p>returns true/false if we are studying fission of the recoiling nucleus </p>
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00201">201</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1691,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the magnetic field strength. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00201">201</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00202">202</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1690,7 +1718,65 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00345">345</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00354">354</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="ac635cfff884ece4cb84690e542e03dc9" name="ac635cfff884ece4cb84690e542e03dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac635cfff884ece4cb84690e542e03dc9">&#9670;&#160;</a></span>GetFissionCutHeavy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; TCutG &gt; ISSReaction::GetFissionCutHeavy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for particular recoil cuts. </p>
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00335">335</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="ae7c8e4ae6fea6eee1658432fdef34d71" name="ae7c8e4ae6fea6eee1658432fdef34d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c8e4ae6fea6eee1658432fdef34d71">&#9670;&#160;</a></span>GetFissionCutLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; TCutG &gt; ISSReaction::GetFissionCutLight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the heavy fission fragment cut. </p>
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00338">338</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1719,7 +1805,7 @@ Private Attributes</h2></td></tr>
 
 <p>Calculates the total energy in the CM frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00253">253</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00254">254</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1834,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the T1 time cut maximum. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00228">228</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00229">229</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1775,7 +1861,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00347">347</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00356">356</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1820,7 +1906,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>En: The nuclear specific energy loss of a particular nuclide over the range </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00782">782</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00836">836</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -1847,9 +1933,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for particular recoil cuts. </p>
+<p>Getter for the light fission fragment cut. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00334">334</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00343">343</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1876,7 +1962,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00327">327</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00328">328</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1905,7 +1991,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the excitation energy. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00217">217</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00218">218</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1932,7 +2018,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00218">218</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00219">219</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1961,7 +2047,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the z distance as the ejectile intercepts the detector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00212">212</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00213">213</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -1990,7 +2076,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the phi angle as ejectile is emitted from the target. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00213">213</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00214">214</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2023,7 +2109,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>energy correction to obtain the true ion energy (if detected) or the charge collected (if !detected) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00988">988</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01042">1042</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -2052,7 +2138,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the projected z (where the particle would intersect with the beam axis) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00236">236</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00237">237</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2081,7 +2167,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the phi angle of the ejectile as it intercepts the detector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00214">214</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00215">215</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2108,7 +2194,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00361">361</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00370">370</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2137,7 +2223,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the number of recoil cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00328">328</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00329">329</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2164,7 +2250,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00346">346</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00355">355</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2193,7 +2279,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the T1 time cut minimum. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00226">226</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00227">227</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2222,7 +2308,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the EBIS fill ratio. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00225">225</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00226">226</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2249,7 +2335,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00359">359</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00368">368</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2278,7 +2364,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the ELUM dead layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00208">208</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00209">209</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2307,7 +2393,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the CM angle of the recoil/ejectile. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00209">209</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00210">210</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2336,7 +2422,7 @@ Private Attributes</h2></td></tr>
 
 <p>if the user output tree is enabled </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00233">233</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00234">234</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2365,7 +2451,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for the measured z (where the particle lands on the array) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00234">234</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00235">235</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2398,6 +2484,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4466215a5193636e202931d5642cd5a2" name="a4466215a5193636e202931d5642cd5a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4466215a5193636e202931d5642cd5a2">&#9670;&#160;</a></span>IsFission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ISSReaction::IsFission </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00200">200</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
 <a id="a5e1ce3ab8c9ed7b444b6090771eae067" name="a5e1ce3ab8c9ed7b444b6090771eae067"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e1ce3ab8c9ed7b444b6090771eae067">&#9670;&#160;</a></span>IsSource()</h2>
 
@@ -2423,7 +2536,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flags the measurement as source only. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00342">342</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00351">351</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2455,7 +2568,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01324">1324</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01378">1378</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -2557,7 +2670,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true/false depending on whether the function succeeds operating </dd></dl>
 <p>Open stopping power files and make TGraphs of data</p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00815">815</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l00869">869</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -2586,7 +2699,7 @@ Private Attributes</h2></td></tr>
 
 <p>array mode, p-side only data or demand p/n coincidences </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00231">231</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00232">232</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2615,7 +2728,7 @@ Private Attributes</h2></td></tr>
 
 <p>Setter for the distance between the target and first silicon wafer of the array. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00308">308</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00309">309</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2644,7 +2757,7 @@ Private Attributes</h2></td></tr>
 
 <p>Setter for the magnetic field strength. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00307">307</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00308">308</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2673,7 +2786,7 @@ Private Attributes</h2></td></tr>
 
 <p>Setter for the distance between the target and ELUM silicon. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00310">310</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00311">311</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2702,7 +2815,7 @@ Private Attributes</h2></td></tr>
 
 <p>Setter for the array dead layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00309">309</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00310">310</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2731,7 +2844,7 @@ Private Attributes</h2></td></tr>
 
 <p>Getter for array-recoil fill ratio (unused?) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00306">306</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00307">307</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2789,7 +2902,7 @@ Private Attributes</h2></td></tr>
 
 <p>Setter for the ELUM dead layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00312">312</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00313">313</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2818,7 +2931,7 @@ Private Attributes</h2></td></tr>
 
 <p>Setter for the target offset (X) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00313">313</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00314">314</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2857,7 +2970,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>en-eloss </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01166">1166</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01220">1220</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -2902,7 +3015,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>E_det </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01105">1105</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01159">1159</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -2929,7 +3042,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01247">1247</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8cc_source.html#l01301">1301</a> of file <a class="el" href="Reaction_8cc_source.html">Reaction.cc</a>.</p>
 
 </div>
 </div>
@@ -2958,7 +3071,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a particular cut applied to the E vs z plot. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00341">341</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00350">350</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -2985,7 +3098,7 @@ Private Attributes</h2></td></tr>
 
 <p>An angle used for calculating ThetaCM and Ex. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00398">398</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00408">408</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3011,7 +3124,7 @@ Private Attributes</h2></td></tr>
 
 <p>Energies of the alphas for calibration in a source run. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00466">466</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00480">480</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3037,7 +3150,7 @@ Private Attributes</h2></td></tr>
 
 <p>List of binding energies from AME2020. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00371">371</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00380">380</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3061,7 +3174,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00416">416</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00426">426</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3087,7 +3200,7 @@ Private Attributes</h2></td></tr>
 
 <p>Prompt time windows between recoil and array event. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00422">422</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00432">432</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3113,7 +3226,7 @@ Private Attributes</h2></td></tr>
 
 <p>Prompt time window between recoil and array event. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00423">423</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00433">433</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3137,7 +3250,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00424">424</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00434">434</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3163,7 +3276,7 @@ Private Attributes</h2></td></tr>
 
 <p>Beam particle. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00379">379</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00388">388</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3189,7 +3302,7 @@ Private Attributes</h2></td></tr>
 
 <p>Dead layer on array silicon in mm of Si equivalent. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00376">376</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00385">385</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3215,7 +3328,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to the derivative of the minimisation function for the simulation of the reaction. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00393">393</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00403">403</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3241,7 +3354,7 @@ Private Attributes</h2></td></tr>
 
 <p>Total energy of ejectile in centre of mass. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00395">395</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00405">405</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3267,7 +3380,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vector containing the E vs z cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00457">457</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00469">469</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3293,7 +3406,7 @@ Private Attributes</h2></td></tr>
 
 <p>Laboratory beam energy in keV/u. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00385">385</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00394">394</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3319,7 +3432,7 @@ Private Attributes</h2></td></tr>
 
 <p>Beam off max time in ns. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00402">402</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00412">412</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3345,7 +3458,7 @@ Private Attributes</h2></td></tr>
 
 <p>Beam on max time in ns. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00401">401</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00411">411</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3371,7 +3484,7 @@ Private Attributes</h2></td></tr>
 
 <p>Ratio of ebis on/off as measured. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00403">403</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00413">413</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3397,7 +3510,7 @@ Private Attributes</h2></td></tr>
 
 <p>Ejectile particle. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00381">381</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00390">390</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3423,7 +3536,7 @@ Private Attributes</h2></td></tr>
 
 <p>Dead layer on ELUM in mm of Si equivalent. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00445">445</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00455">455</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3449,7 +3562,7 @@ Private Attributes</h2></td></tr>
 
 <p>Prompt time windows between recoil and elum event. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00425">425</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00435">435</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3475,7 +3588,7 @@ Private Attributes</h2></td></tr>
 
 <p>Prompt time window between recoil and elum event. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00426">426</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00436">436</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3499,7 +3612,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00427">427</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00437">437</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3525,7 +3638,7 @@ Private Attributes</h2></td></tr>
 
 <p>inner radius of the ELUM detector </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00443">443</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00453">453</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3551,7 +3664,7 @@ Private Attributes</h2></td></tr>
 
 <p>outer radius of the ELUM detector </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00444">444</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00454">454</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3577,7 +3690,7 @@ Private Attributes</h2></td></tr>
 
 <p>z position of the ELUM (usually positive, but if negative assumed not to exist in setup) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00442">442</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00452">452</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3603,7 +3716,7 @@ Private Attributes</h2></td></tr>
 
 <p>The location of the E vs z cut files. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00452">452</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00462">462</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3629,7 +3742,7 @@ Private Attributes</h2></td></tr>
 
 <p>The names of the E vs z cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00453">453</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00463">463</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3655,7 +3768,7 @@ Private Attributes</h2></td></tr>
 
 <p>Excitation energy of recoil. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00396">396</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00406">406</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3681,7 +3794,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to the minimisation function. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00390">390</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00400">400</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3707,7 +3820,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to the derivative of the minimisation function. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00391">391</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00401">401</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3733,7 +3846,181 @@ Private Attributes</h2></td></tr>
 
 <p>The directory location of the input reaction file. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00365">365</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00374">374</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="a5f92a7787f133d6f868ce64aa25058ab" name="a5f92a7787f133d6f868ce64aa25058ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f92a7787f133d6f868ce64aa25058ab">&#9670;&#160;</a></span>fission</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ISSReaction::fission</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if we are studying the fission of the recoiling nucleus. </p>
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00395">395</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="a43eb38e9d87097268731c69397ff9c75" name="a43eb38e9d87097268731c69397ff9c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43eb38e9d87097268731c69397ff9c75">&#9670;&#160;</a></span>fission_cutH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;TCutG&gt; ISSReaction::fission_cutH</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Heavy fission fragment cut. </p>
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00470">470</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="af076909d37c2814209943857b35c2a61" name="af076909d37c2814209943857b35c2a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af076909d37c2814209943857b35c2a61">&#9670;&#160;</a></span>fission_cutL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;TCutG&gt; ISSReaction::fission_cutL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Light fission fragment cut. </p>
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00471">471</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="ae400ddbce2e8d6a6f12f7a97b2ade807" name="ae400ddbce2e8d6a6f12f7a97b2ade807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae400ddbce2e8d6a6f12f7a97b2ade807">&#9670;&#160;</a></span>fissioncutHfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ISSReaction::fissioncutHfile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00464">464</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="aa08f8ed8fb712053d3751b16636c7a3d" name="aa08f8ed8fb712053d3751b16636c7a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08f8ed8fb712053d3751b16636c7a3d">&#9670;&#160;</a></span>fissioncutHname</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ISSReaction::fissioncutHname</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00465">465</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="aeeb7535bbd2b660cbbedc20245af90fa" name="aeeb7535bbd2b660cbbedc20245af90fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb7535bbd2b660cbbedc20245af90fa">&#9670;&#160;</a></span>fissioncutLfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ISSReaction::fissioncutLfile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00464">464</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+
+</div>
+</div>
+<a id="a41bf1d8e01d37348c7c2ea3460e869da" name="a41bf1d8e01d37348c7c2ea3460e869da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41bf1d8e01d37348c7c2ea3460e869da">&#9670;&#160;</a></span>fissioncutLname</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ISSReaction::fissioncutLname</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00465">465</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3759,7 +4046,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flag in case it's an alpha source run. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00470">470</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00484">484</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3785,7 +4072,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to the minimisation function for the simulation of the reaction. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00392">392</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00402">402</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3811,7 +4098,7 @@ Private Attributes</h2></td></tr>
 
 <p>TGraph containing pulse-height correction information. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00462">462</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00476">476</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3837,7 +4124,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flipped axes of gPHC. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00463">463</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00477">477</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3863,7 +4150,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vector of pointer to relevant range TGraphs relevant to the reaction of study. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00461">461</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00475">475</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3889,7 +4176,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vector of pointer to relevant stopping-power TGraphs relevant to the reaction of study. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00460">460</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00474">474</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3914,7 +4201,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>user can select which laser data to sort, with values: 0 = laser off NOT on 1 = laser on NOT off 2 = laser on OR off (default) </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00410">410</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00420">420</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3940,7 +4227,7 @@ Private Attributes</h2></td></tr>
 
 <p>Magnetic field strength in Telsa. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00374">374</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00383">383</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3966,7 +4253,7 @@ Private Attributes</h2></td></tr>
 
 <p>The number of E vs z cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00449">449</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00459">459</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -3992,7 +4279,7 @@ Private Attributes</h2></td></tr>
 
 <p>The number of recoil cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00448">448</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00458">458</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4018,7 +4305,7 @@ Private Attributes</h2></td></tr>
 
 <p>Array for holding parameters for the functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00394">394</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00404">404</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4044,7 +4331,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flag to indicate whether pulse height correction data was read successfully. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00465">465</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00479">479</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4070,7 +4357,7 @@ Private Attributes</h2></td></tr>
 
 <p>Projected phi angle of the ejectile emitted from the target. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00434">434</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00444">444</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4096,7 +4383,7 @@ Private Attributes</h2></td></tr>
 
 <p>Measured phi angle that ejectile interesect the silicon detector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00433">433</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00443">443</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4122,7 +4409,7 @@ Private Attributes</h2></td></tr>
 
 <p>Measured radius of the ejectile when it interects the array. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00430">430</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00440">440</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4148,7 +4435,7 @@ Private Attributes</h2></td></tr>
 
 <p>Recoil particle. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00382">382</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00391">391</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4174,7 +4461,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vector containing the recoil cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00456">456</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00468">468</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4200,7 +4487,7 @@ Private Attributes</h2></td></tr>
 
 <p>The location of the recoil cut files. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00450">450</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00460">460</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4226,7 +4513,7 @@ Private Attributes</h2></td></tr>
 
 <p>The names of the recoil cuts. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00451">451</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00461">461</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4252,7 +4539,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to a root finder object. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00388">388</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00398">398</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4278,7 +4565,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to a root finder object for the simulation of the reaction. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00389">389</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00399">399</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4302,7 +4589,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00419">419</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00429">429</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4328,7 +4615,7 @@ Private Attributes</h2></td></tr>
 
 <p>Smart pointer to the <a class="el" href="classISSSettings.html" title="Class to implement user &quot;settings&quot; to the ISS sort code.">ISSSettings</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00368">368</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00377">377</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4354,7 +4641,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flag to indicate whether calculation of stopping powers has worked or not. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00464">464</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00478">478</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4380,7 +4667,7 @@ Private Attributes</h2></td></tr>
 
 <p>T1 pulse max time. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00406">406</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00416">416</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4406,7 +4693,7 @@ Private Attributes</h2></td></tr>
 
 <p>T1 pulse min time. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00407">407</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00417">417</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4432,7 +4719,7 @@ Private Attributes</h2></td></tr>
 
 <p>Target particle. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00380">380</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00389">389</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4458,7 +4745,7 @@ Private Attributes</h2></td></tr>
 
 <p>Target thickness in units of mg/cm^2. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00437">437</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00447">447</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4484,7 +4771,7 @@ Private Attributes</h2></td></tr>
 
 <p>CM angle for ejectile/recoil. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00397">397</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00407">407</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4510,7 +4797,7 @@ Private Attributes</h2></td></tr>
 
 <p>Horizontal offset of the target/beam position, with respect to the array in mm. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00438">438</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00448">448</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4536,7 +4823,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vertical offset of the target/beam position, with respect to the array in mm. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00439">439</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00449">449</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4562,7 +4849,7 @@ Private Attributes</h2></td></tr>
 
 <p>Projected z distance from target that ejectile interesect the beam axis. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00432">432</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00442">442</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4588,7 +4875,7 @@ Private Attributes</h2></td></tr>
 
 <p>Distance between the array and first silicon wafer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00375">375</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00384">384</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
@@ -4614,7 +4901,7 @@ Private Attributes</h2></td></tr>
 
 <p>Measured z distance from target that ejectile interesect the silicon detector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00431">431</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Reaction_8hh_source.html#l00441">441</a> of file <a class="el" href="Reaction_8hh_source.html">Reaction.hh</a>.</p>
 
 </div>
 </div>
