@@ -501,7 +501,7 @@ void ISSReaction::ReadReaction() {
 		else {
 
 			if( !fission_file->GetListOfKeys()->Contains( fissioncutLname.data() ) )
-				std::cout << "Couldn't find " << fissioncutHname << " in " << fissioncutLfile << std::endl;
+				std::cout << "Couldn't find " << fissioncutLname << " in " << fissioncutLfile << std::endl;
 			else
 				fission_cutL = std::make_shared<TCutG>( *static_cast<TCutG*>( fission_file->Get( fissioncutLname.data() )->Clone() ) );
 
