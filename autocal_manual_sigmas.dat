@@ -1,0 +1,479 @@
+# Autocal file for ISSSort
+#
+# Pass this file to iss_sort with the -autocalfile flag
+#
+# Patrick MacGregor - August 2022
+# patrick.macgregor@manchester.ac.uk
+#
+# Below are the default parameters that can be changed by uncommenting
+# and passing this file to iss_sort during the (optional) autocal stage.
+#
+#
+## Autocal global control options
+AutocalDebug: 1			// This prints more files and text to the console (if true) for the autocal stage if you are running into problems! But it will make the code run slower...
+#AutocalOnlyManualFits: 0	// This only runs autocal on channels that have their fit parameters specified in this file
+#AutocalFitShape: 0 // This chooses which kind of fit the code uses. The options are:
+#					//		Gaussian = 0
+#					//		Crystal Ball = 1
+#AutocalRebinFactor: 1		// This decides how much to rebin the spectrum by. This must be an integer > 1 to do anything
+#AutocalImageFileType: png	// The file type for images it prints. Make sure it's one ROOT can use (and is lowercase)!
+#AutocalPrintBadCalibrations: 0	// Prints the calibration parameters for fits that fail to converge
+#
+#
+## Autocal default fitting options
+## Here, you can decide to override the default fitting options. These
+## will apply globally to everything APART from the manually set
+## parameters below
+#DefaultFit.Background: 0.1							// Initial guess for background of alpha spectrum
+#DefaultFit.BackgroundLB: 0.0						// Lower limit for background of alpha spectrum
+#DefaultFit.BackgroundUB: 50.0						// Upper limit for background of alpha spectrum
+#DefaultFit.Sigma: 2.5								// Initial guess for sigma of each peak in alpha spectrum
+#DefaultFit.SigmaLB: 0.2							// Lower limit for sigma of each peak in alpha spectrum
+#DefaultFit.SigmaUB: 10.0							// Upper limit for sigma of each peak in alpha spectrum
+#DefaultFit.CrystalBallAlpha: 1						// Initial guess for alpha for crystal ball fit in alpha spectrum
+#DefaultFit.CrystalBallAlphaLB: 1e-6				// Lower limit for alpha for crystal ball fit in alpha spectrum
+#DefaultFit.CrystalBallAlphaUB: 10					// Upper limit for alpha for crystal ball fit in alpha spectrum
+#DefaultFit.CrystalBallN: 1							// Initial guess for n for crystal ball fit in alpha spectrum
+#DefaultFit.CrystalBallNLB: 1e-6					// Lower limit for n for crystal ball fit in alpha spectrum
+#DefaultFit.CrystalBallNUB: 20						// Upper limit for n for crystal ball fit in alpha spectrum
+#DefaultFit.AmplitudeFractionLB: 0.2				// The lower limit for the amplitude of a peak expressed as a fraction of the height of the bin
+#DefaultFit.AmplitudeFractionUB: 2.0				// The upper limit for the amplitude of a peak expressed as a fraction of the height of the bin
+#DefaultFit.PeakWidthEstimate: 30					// A guess for the width of a window, centred on the centroid guess, that determines the upper and lower bounds for the centroid parameter
+#DefaultFit.PeakHeightThresholdFraction: 0.08		// This fraction multiplied by the maximum amplitude in the spectrum determines a threshold on the number of counts, over which each peak must rise
+#DefaultFit.PeakHeightDipFraction: 0.6				// Ensures that the number of counts has dipped to this fraction of the height of the last peak before being ready to record another peak
+#DefaultFit.PeakChannelThresholdLB: 360				// Puts a lower limit on the channel number where peaks can be identified and fit
+#DefaultFit.PeakChannelThresholdUB: 700				// Puts an upper limit on the channel number where peaks can be identified and fit
+#DefaultFit.MissingPeakIsLast: 1					// Decides whether the spectrum has missed the first or last peak when detecting peaks
+#
+# Ignore channel
+#   Ignore_<mod>_<asic>_<ch>:	# 1 = ignore this channel for all fitting; 0 = keep it in (the default!)
+#
+#
+## Autocal manual fitting options
+## Use this to set manual calibration parameters on particular modules, asics,
+## and channels. This will to replace the "FindPeaks" function in the Autocal
+## part of ISSSort, and gives a bit more fine tuning as to what the fitting does.
+#
+# The different parameters are:
+#   man_<mod>_<asic>_<ch>.Background:		# This is the estimate of the background in the spectrum
+#   man_<mod>_<asic>_<ch>.BackgroundLB:		# Lower bound constraint for background
+#   man_<mod>_<asic>_<ch>.BackgroundUB:		# Upper bound constraint for background
+#   man_<mod>_<asic>_<ch>.Sigma:			# This is the estimate of the standard deviation of your distribution
+#   man_<mod>_<asic>_<ch>.SigmaLB:			# Lower bound constraint for background
+#   man_<mod>_<asic>_<ch>.SigmaUB:			# Upper bound constraint for background
+#   man_<mod>_<asic>_<ch>.Centroid_<peak number>:		# This is the guess of where the centroid of the peak is
+#   man_<mod>_<asic>_<ch>.CentroidLB_<peak number>:		# Lower bound constraint for background
+#   man_<mod>_<asic>_<ch>.CentroidUB_<peak number>:		# Upper bound constraint for background
+#   man_<mod>_<asic>_<ch>.MissingPeakIsLast:			# If spectrum has a missing peak, say whether it is the last or first alpha particle
+#
+## Using any of these switches will turn on the manual fitting boolean. This
+## behaviour can also be controlled/override any behaviour here by using the
+## switch:
+#   man_<mod>_<asic>_<ch>:			# 1 = turn on manual fitting; 0 = turn off, even if we have specified fitting parameters!
+
+man_0_0_38: 1
+man_0_0_38.Centroid_0:		288
+man_0_0_38.CentroidLB_0:	275
+man_0_0_38.CentroidUB_0:	295
+man_0_0_38.Centroid_1:		376
+man_0_0_38.CentroidLB_1:	370
+man_0_0_38.CentroidUB_1:	380
+man_0_0_38.Centroid_2:		388
+man_0_0_38.CentroidLB_2:	383
+man_0_0_38.CentroidUB_2:	390
+man_0_0_38.Centroid_3:		396
+man_0_0_38.CentroidLB_3:	393
+man_0_0_38.CentroidUB_3:	404
+
+man_0_0_58: 1
+man_0_0_58.Centroid_0:		282
+man_0_0_58.CentroidLB_0:	270
+man_0_0_58.CentroidUB_0:	290
+man_0_0_58.Centroid_1:		376
+man_0_0_58.CentroidLB_1:	370
+man_0_0_58.CentroidUB_1:	380
+man_0_0_58.Centroid_2:		387
+man_0_0_58.CentroidLB_2:	382
+man_0_0_58.CentroidUB_2:	392
+man_0_0_58.Centroid_3:		400
+man_0_0_58.CentroidLB_3:	385
+man_0_0_58.CentroidUB_3:	405
+
+man_0_2_71: 1
+man_0_2_71.Centroid_0:		264
+man_0_2_71.CentroidLB_0:	260
+man_0_2_71.CentroidUB_0:	270
+man_0_2_71.Centroid_1:		355
+man_0_2_71.CentroidLB_1:	340
+man_0_2_71.CentroidUB_1:	355
+man_0_2_71.Centroid_2:		368
+man_0_2_71.CentroidLB_2:	360
+man_0_2_71.CentroidUB_2:	375
+man_0_2_71.Centroid_3:		380
+man_0_2_71.CentroidLB_3:	375
+man_0_2_71.CentroidUB_3:	385
+
+man_0_3_88: 1
+man_0_3_88.Centroid_0:		275
+man_0_3_88.CentroidLB_0:	270
+man_0_3_88.CentroidUB_0:	280
+man_0_3_88.Centroid_1:		365
+man_0_3_88.CentroidLB_1:	360
+man_0_3_88.CentroidUB_1:	370
+man_0_3_88.Centroid_2:		378
+man_0_3_88.CentroidLB_2:	370
+man_0_3_88.CentroidUB_2:	385
+man_0_3_88.Centroid_3:		388
+man_0_3_88.CentroidLB_3:	385
+man_0_3_88.CentroidUB_3:	395
+
+man_0_3_127: 1
+man_0_3_127.Centroid_0:		270
+man_0_3_127.CentroidLB_0:	263
+man_0_3_127.CentroidUB_0:	275
+man_0_3_127.Centroid_1:		360
+man_0_3_127.CentroidLB_1:	350
+man_0_3_127.CentroidUB_1:	370
+man_0_3_127.Centroid_2:		375
+man_0_3_127.CentroidLB_2:	370
+man_0_3_127.CentroidUB_2:	380
+man_0_3_127.Centroid_3:		388
+man_0_3_127.CentroidLB_3:	385
+man_0_3_127.CentroidUB_3:	395
+
+man_0_1_37: 1
+man_0_1_37.Centroid_0:		410
+man_0_1_37.CentroidLB_0:	395
+man_0_1_37.CentroidUB_0:	425
+man_0_1_37.Centroid_1:		545
+man_0_1_37.CentroidLB_1:	530
+man_0_1_37.CentroidUB_1:	555
+man_0_1_37.Centroid_2:		565
+man_0_1_37.CentroidLB_2:	555
+man_0_1_37.CentroidUB_2:	575
+man_0_1_37.Centroid_3:		584
+man_0_1_37.CentroidLB_3:	573
+man_0_1_37.CentroidUB_3:	592
+
+man_0_5_39: 1
+man_0_5_39.Centroid_0:		315
+man_0_5_39.CentroidLB_0:	305
+man_0_5_39.CentroidUB_0:	330
+man_0_5_39.Centroid_1:		407
+man_0_5_39.CentroidLB_1:	400
+man_0_5_39.CentroidUB_1:	420
+man_0_5_39.Centroid_2:		420
+man_0_5_39.CentroidLB_2:	415
+man_0_5_39.CentroidUB_2:	425
+man_0_5_39.Centroid_3:		430
+man_0_5_39.CentroidLB_3:	425
+man_0_5_39.CentroidUB_3:	440
+
+man_0_5_43: 1
+man_0_5_43.Centroid_0:		305
+man_0_5_43.CentroidLB_0:	300
+man_0_5_43.CentroidUB_0:	315
+man_0_5_43.Centroid_1:		400
+man_0_5_43.CentroidLB_1:	390
+man_0_5_43.CentroidUB_1:	410
+man_0_5_43.Centroid_2:		415
+man_0_5_43.CentroidLB_2:	405
+man_0_5_43.CentroidUB_2:	420
+man_0_5_43.Centroid_3:		425
+man_0_5_43.CentroidLB_3:	420
+man_0_5_43.CentroidUB_3:	430
+
+man_1_0_37: 1
+man_1_0_37.Centroid_0:		418
+man_1_0_37.CentroidLB_0:	400
+man_1_0_37.CentroidUB_0:	430
+man_1_0_37.Centroid_1:		540
+man_1_0_37.CentroidLB_1:	530
+man_1_0_37.CentroidUB_1:	550
+man_1_0_37.Centroid_2:		560
+man_1_0_37.CentroidLB_2:	550
+man_1_0_37.CentroidUB_2:	570
+man_1_0_37.Centroid_3:		583
+man_1_0_37.CentroidLB_3:	570
+man_1_0_37.CentroidUB_3:	590
+
+man_2_0_1: 1
+man_2_0_1.Centroid_0:		270
+man_2_0_1.CentroidLB_0:		260
+man_2_0_1.CentroidUB_0:		280
+man_2_0_1.Centroid_1:		370
+man_2_0_1.CentroidLB_1:		360
+man_2_0_1.CentroidUB_1:		380
+man_2_0_1.Centroid_2:		385
+man_2_0_1.CentroidLB_2:		380
+man_2_0_1.CentroidUB_2:		390
+man_2_0_1.Centroid_3:		400
+man_2_0_1.CentroidLB_3:		390
+man_2_0_1.CentroidUB_3:		410
+
+man_2_0_122: 1
+man_2_0_122.Centroid_0:		280
+man_2_0_122.CentroidLB_0:	260
+man_2_0_122.CentroidUB_0:	290
+man_2_0_122.Centroid_1:		375
+man_2_0_122.CentroidLB_1:	360
+man_2_0_122.CentroidUB_1:	385
+man_2_0_122.Centroid_2:		390
+man_2_0_122.CentroidLB_2:	385
+man_2_0_122.CentroidUB_2:	400
+man_2_0_122.Centroid_3:		403
+man_2_0_122.CentroidLB_3:	395
+man_2_0_122.CentroidUB_3:	410
+
+man_2_0_127: 1
+man_2_0_127.Centroid_0:		298
+man_2_0_127.CentroidLB_0:	290
+man_2_0_127.CentroidUB_0:	305
+man_2_0_127.Centroid_1:		390
+man_2_0_127.CentroidLB_1:	380
+man_2_0_127.CentroidUB_1:	400
+man_2_0_127.Centroid_2:		403
+man_2_0_127.CentroidLB_2:	398
+man_2_0_127.CentroidUB_2:	410
+man_2_0_127.Centroid_3:		415
+man_2_0_127.CentroidLB_3:	410
+man_2_0_127.CentroidUB_3:	420
+
+man_2_1_127: 1
+man_2_1_127.Centroid_0:		303
+man_2_1_127.CentroidLB_0:	300
+man_2_1_127.CentroidUB_0:	310
+man_2_1_127.Centroid_1:		333
+man_2_1_127.CentroidLB_1:	330
+man_2_1_127.CentroidUB_1:	335
+man_2_1_127.Centroid_2:		339
+man_2_1_127.CentroidLB_2:	335
+man_2_1_127.CentroidUB_2:	342
+man_2_1_127.Centroid_3:		344
+man_2_1_127.CentroidLB_3:	340
+man_2_1_127.CentroidUB_3:	350
+
+man_2_2_77: 1
+man_2_2_77.Centroid_0:		263
+man_2_2_77.CentroidLB_0:	255
+man_2_2_77.CentroidUB_0:	270
+man_2_2_77.Centroid_1:		357
+man_2_2_77.CentroidLB_1:	350
+man_2_2_77.CentroidUB_1:	365
+man_2_2_77.Centroid_2:		370
+man_2_2_77.CentroidLB_2:	360
+man_2_2_77.CentroidUB_2:	380
+man_2_2_77.Centroid_3:		382
+man_2_2_77.CentroidLB_3:	375
+man_2_2_77.CentroidUB_3:	390
+
+man_2_2_99: 1
+man_2_2_99.Centroid_0:		257
+man_2_2_99.CentroidLB_0:	250
+man_2_2_99.CentroidUB_0:	265
+man_2_2_99.Centroid_1:		354
+man_2_2_99.CentroidLB_1:	340
+man_2_2_99.CentroidUB_1:	356
+man_2_2_99.Centroid_2:		367
+man_2_2_99.CentroidLB_2:	360
+man_2_2_99.CentroidUB_2:	375
+man_2_2_99.Centroid_3:		382
+man_2_2_99.CentroidLB_3:	375
+man_2_2_99.CentroidUB_3:	390
+
+man_2_2_109: 1
+man_2_2_109.Centroid_0:		270
+man_2_2_109.CentroidLB_0:	260
+man_2_2_109.CentroidUB_0:	280
+man_2_2_109.Centroid_1:		365
+man_2_2_109.CentroidLB_1:	355
+man_2_2_109.CentroidUB_1:	370
+man_2_2_109.Centroid_2:		378
+man_2_2_109.CentroidLB_2:	370
+man_2_2_109.CentroidUB_2:	385
+man_2_2_109.Centroid_3:		388
+man_2_2_109.CentroidLB_3:	385
+man_2_2_109.CentroidUB_3:	395
+
+man_2_2_111: 1
+man_2_2_111.Centroid_0:		253
+man_2_2_111.CentroidLB_0:	240
+man_2_2_111.CentroidUB_0:	260
+man_2_2_111.Centroid_1:		345
+man_2_2_111.CentroidLB_1:	340
+man_2_2_111.CentroidUB_1:	355
+man_2_2_111.Centroid_2:		365
+man_2_2_111.CentroidLB_2:	360
+man_2_2_111.CentroidUB_2:	370
+man_2_2_111.Centroid_3:		377
+man_2_2_111.CentroidLB_3:	370
+man_2_2_111.CentroidUB_3:	385
+
+man_2_2_113: 1
+man_2_2_113.Centroid_0:		265
+man_2_2_113.CentroidLB_0:	255
+man_2_2_113.CentroidUB_0:	275
+man_2_2_113.Centroid_1:		360
+man_2_2_113.CentroidLB_1:	350
+man_2_2_113.CentroidUB_1:	365
+man_2_2_113.Centroid_2:		373
+man_2_2_113.CentroidLB_2:	365
+man_2_2_113.CentroidUB_2:	380
+man_2_2_113.Centroid_3:		386
+man_2_2_113.CentroidLB_3:	380
+man_2_2_113.CentroidUB_3:	390
+
+man_2_2_122: 1
+man_2_2_122.Centroid_0:		267
+man_2_2_122.CentroidLB_0:	260
+man_2_2_122.CentroidUB_0:	280
+man_2_2_122.Centroid_1:		363
+man_2_2_122.CentroidLB_1:	358
+man_2_2_122.CentroidUB_1:	370
+man_2_2_122.Centroid_2:		378
+man_2_2_122.CentroidLB_2:	370
+man_2_2_122.CentroidUB_2:	385
+man_2_2_122.Centroid_3:		390
+man_2_2_122.CentroidLB_3:	385
+man_2_2_122.CentroidUB_3:	400
+
+man_2_5_115: 1
+man_2_5_115.Centroid_0:		447
+man_2_5_115.CentroidLB_0:	440
+man_2_5_115.CentroidUB_0:	460
+man_2_5_115.Centroid_1:		568
+man_2_5_115.CentroidLB_1:	560
+man_2_5_115.CentroidUB_1:	577
+man_2_5_115.Centroid_2:		588
+man_2_5_115.CentroidLB_2:	580
+man_2_5_115.CentroidUB_2:	595
+man_2_5_115.Centroid_3:		610
+man_2_5_115.CentroidLB_3:	600
+man_2_5_115.CentroidUB_3:	620
+
+man_0_4_15: 1
+man_0_4_15.Centroid_0:		395
+man_0_4_15.CentroidLB_0:	380
+man_0_4_15.CentroidUB_0:	405
+man_0_4_15.Centroid_1:		500
+man_0_4_15.CentroidLB_1:	490
+man_0_4_15.CentroidUB_1:	503
+man_0_4_15.Centroid_2:		514
+man_0_4_15.CentroidLB_2:	503
+man_0_4_15.CentroidUB_2:	520
+man_0_4_15.Centroid_3:		525
+man_0_4_15.CentroidLB_3:	520
+man_0_4_15.CentroidUB_3:	535
+
+man_0_5_120: 1
+man_0_5_120.Centroid_0:		450
+man_0_5_120.CentroidLB_0:	400
+man_0_5_120.CentroidUB_0:	500
+man_0_5_120.Centroid_1:		575
+man_0_5_120.CentroidLB_1:	560
+man_0_5_120.CentroidUB_1:	580
+man_0_5_120.Centroid_2:		590
+man_0_5_120.CentroidLB_2:	580
+man_0_5_120.CentroidUB_2:	600
+man_0_5_120.Centroid_3:		615
+man_0_5_120.CentroidLB_3:	600
+man_0_5_120.CentroidUB_3:	620
+
+man_0_5_121: 1
+man_0_5_121.Centroid_0:		470
+man_0_5_121.CentroidLB_0:	450
+man_0_5_121.CentroidUB_0:	500
+man_0_5_121.Centroid_1:		590
+man_0_5_121.CentroidLB_1:	570
+man_0_5_121.CentroidUB_1:	600
+man_0_5_121.Centroid_2:		610
+man_0_5_121.CentroidLB_2:	600
+man_0_5_121.CentroidUB_2:	620
+man_0_5_121.Centroid_3:		630
+man_0_5_121.CentroidLB_3:	620
+man_0_5_121.CentroidUB_3:	640
+
+man_0_5_122: 1
+man_0_5_122.Centroid_0:		470
+man_0_5_122.CentroidLB_0:	450
+man_0_5_122.CentroidUB_0:	500
+man_0_5_122.Centroid_1:		590
+man_0_5_122.CentroidLB_1:	570
+man_0_5_122.CentroidUB_1:	600
+man_0_5_122.Centroid_2:		610
+man_0_5_122.CentroidLB_2:	600
+man_0_5_122.CentroidUB_2:	620
+man_0_5_122.Centroid_3:		630
+man_0_5_122.CentroidLB_3:	620
+man_0_5_122.CentroidUB_3:	640
+
+
+man_0_5_123: 1
+man_0_5_123.Centroid_0:		450
+man_0_5_123.CentroidLB_0:	400
+man_0_5_123.CentroidUB_0:	500
+man_0_5_123.Centroid_1:		580
+man_0_5_123.CentroidLB_1:	560
+man_0_5_123.CentroidUB_1:	590
+man_0_5_123.Centroid_2:		600
+man_0_5_123.CentroidLB_2:	590
+man_0_5_123.CentroidUB_2:	610
+man_0_5_123.Centroid_3:		620
+man_0_5_123.CentroidLB_3:	610
+man_0_5_123.CentroidUB_3:	630
+
+man_0_5_124: 1
+man_0_5_124.Centroid_0:		450
+man_0_5_124.CentroidLB_0:	400
+man_0_5_124.CentroidUB_0:	500
+man_0_5_124.Centroid_1:		580
+man_0_5_124.CentroidLB_1:	560
+man_0_5_124.CentroidUB_1:	590
+man_0_5_124.Centroid_2:		600
+man_0_5_124.CentroidLB_2:	590
+man_0_5_124.CentroidUB_2:	610
+man_0_5_124.Centroid_3:		620
+man_0_5_124.CentroidLB_3:	610
+man_0_5_124.CentroidUB_3:	630
+
+man_0_5_125: 1
+man_0_5_125.Centroid_0:		480
+man_0_5_125.CentroidLB_0:	450
+man_0_5_125.CentroidUB_0:	500
+man_0_5_125.Centroid_1:		590
+man_0_5_125.CentroidLB_1:	580
+man_0_5_125.CentroidUB_1:	600
+man_0_5_125.Centroid_2:		620
+man_0_5_125.CentroidLB_2:	605
+man_0_5_125.CentroidUB_2:	625
+man_0_5_125.Centroid_3:		640
+man_0_5_125.CentroidLB_3:	630
+man_0_5_125.CentroidUB_3:	650
+
+man_0_5_126: 1
+man_0_5_126.Centroid_0:		460
+man_0_5_126.CentroidLB_0:	400
+man_0_5_126.CentroidUB_0:	500
+man_0_5_126.Centroid_1:		590
+man_0_5_126.CentroidLB_1:	570
+man_0_5_126.CentroidUB_1:	600
+man_0_5_126.Centroid_2:		610
+man_0_5_126.CentroidLB_2:	600
+man_0_5_126.CentroidUB_2:	620
+man_0_5_126.Centroid_3:		630
+man_0_5_126.CentroidLB_3:	620
+man_0_5_126.CentroidUB_3:	650
+
+man_0_5_127: 1
+man_0_5_127.Centroid_0:		460
+man_0_5_127.CentroidLB_0:	400
+man_0_5_127.CentroidUB_0:	500
+man_0_5_127.Centroid_1:		590
+man_0_5_127.CentroidLB_1:	570
+man_0_5_127.CentroidUB_1:	600
+man_0_5_127.Centroid_2:		610
+man_0_5_127.CentroidLB_2:	600
+man_0_5_127.CentroidUB_2:	620
+man_0_5_127.Centroid_3:		630
+man_0_5_127.CentroidLB_3:	620
+man_0_5_127.CentroidUB_3:	650
