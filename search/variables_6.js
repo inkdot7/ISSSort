@@ -148,6 +148,5 @@ var searchData=
   ['fsim_145',['fsim',['../classISSReaction.html#a9a12b81efcfe420e51f5c7eee374fd18',1,'ISSReaction']]],
   ['ftypes_146',['fTypes',['../classCommandLineInterface.html#adf547c0638d96fb9aa168508e2488e1f',1,'CommandLineInterface']]],
   ['fvalues_147',['fValues',['../classCommandLineInterface.html#acd53867f1ddfa17f31771f3ad756d1f2',1,'CommandLineInterface']]],
-  ['fvertical_5f0_148',['fVertical_0',['../classISSGUI.html#a7a524530f47007f46f998fe02444242c',1,'ISSGUI']]],
-  ['fwhm_149',['fwhm',['../structSigmaResult.html#abe8737aaa7bbeb58468869bf9c1f0e65',1,'SigmaResult']]]
+  ['fvertical_5f0_148',['fVertical_0',['../classISSGUI.html#a7a524530f47007f46f998fe02444242c',1,'ISSGUI']]]
 ];
