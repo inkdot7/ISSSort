@@ -46,7 +46,7 @@ var searchData=
   ['arrayp_5fctr_43',['arrayp_ctr',['../classISSEventBuilder.html#adafad17bb91b56c3bc6e5a9cc708096b',1,'ISSEventBuilder']]],
   ['arrayp_5fevent_44',['arrayp_event',['../classISSEvts.html#a6a04cdbae47bfacb2e84d9794d709623',1,'ISSEvts']]],
   ['arrayp_5fevt_45',['arrayp_evt',['../classISSEventBuilder.html#accaa31c8bdd95abc0eee45d0a5fd9aa1',1,'ISSEventBuilder::arrayp_evt'],['../classISSHistogrammer.html#aaa607a17d1605d4a076ccfe8f81f9bcf',1,'ISSHistogrammer::arrayp_evt']]],
-  ['asic_46',['asic',['../structISSAutoCalModAsicChan.html#ac9d8ea16d28cbf0e493c77f4f6a64aef',1,'ISSAutoCalModAsicChan::asic'],['../classISSAsicData.html#a5556d3082619bf009e89197ac2a138af',1,'ISSAsicData::asic']]],
+  ['asic_46',['asic',['../structISSAutoCalModAsicChan.html#ac9d8ea16d28cbf0e493c77f4f6a64aef',1,'ISSAutoCalModAsicChan::asic'],['../structSigmaResult.html#aedbd1c0bd81a836c4ba52596a1e6640b',1,'SigmaResult::asic'],['../classISSAsicData.html#a5556d3082619bf009e89197ac2a138af',1,'ISSAsicData::asic']]],
   ['asic_5fdata_47',['asic_data',['../classISSConverter.html#a8327db391498d30e39e7a0059a32a7e1',1,'ISSConverter::asic_data'],['../classISSEventBuilder.html#aa6fb2f01a40d580ebb23e861be8f804e',1,'ISSEventBuilder::asic_data']]],
   ['asic_5fdead_5ftime_48',['asic_dead_time',['../classISSEventBuilder.html#a9041cd66ac3ea12734120cb9a1517f1d',1,'ISSEventBuilder']]],
   ['asic_5fpackets_49',['asic_packets',['../classISSDataPackets.html#ae9a9e1a3976b1b96c6235e0a26044fc4',1,'ISSDataPackets']]],

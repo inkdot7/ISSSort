@@ -59,7 +59,7 @@ var searchData=
   ['centre_5fprogress_56',['centre_progress',['../classISSGUI.html#ad1e32d8ede2b54730c1b99ae622f0909',1,'ISSGUI']]],
   ['centre_5ftext_57',['centre_text',['../classISSGUI.html#a4d2416cd2cfe9cab10acb10111590db1',1,'ISSGUI']]],
   ['ch_58',['ch',['../classISSAsicData.html#a4f14cf3459f84d87f806a7a96d18077b',1,'ISSAsicData::ch'],['../classISSVmeData.html#a7a24465cb4767926522dae4f1ffe54dd',1,'ISSVmeData::ch']]],
-  ['chan_59',['chan',['../structISSAutoCalModAsicChan.html#a6c2946d22e0aa756f2d556158d314619',1,'ISSAutoCalModAsicChan']]],
+  ['chan_59',['chan',['../structISSAutoCalModAsicChan.html#a6c2946d22e0aa756f2d556158d314619',1,'ISSAutoCalModAsicChan::chan'],['../structSigmaResult.html#aa7de8f1e91925d502b3095a4a5a7a015',1,'SigmaResult::chan']]],
   ['check_5fautocal_60',['check_autocal',['../classISSGUI.html#a5f98f943815ec6e1877946cfb1890955',1,'ISSGUI']]],
   ['check_5fevent_61',['check_event',['../classISSGUI.html#a4bc9bfe4e8316c42915793cd99caeba7',1,'ISSGUI']]],
   ['check_5fforce_62',['check_force',['../classISSGUI.html#a559a01bc5b4de06215c52fbaec0bf95f',1,'ISSGUI']]],

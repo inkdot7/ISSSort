@@ -104,7 +104,7 @@ var searchData=
   ['fissioncutlname_101',['fissioncutLname',['../classISSReaction.html#a41bf1d8e01d37348c7c2ea3460e869da',1,'ISSReaction']]],
   ['fit_5fshape_102',['fit_shape',['../FitFunctions_8hh.html#a89a43f1be8fbd2e68cafd1517a46eb7a',1,'FitFunctions.hh']]],
   ['fitfunctions_2ehh_103',['FitFunctions.hh',['../FitFunctions_8hh.html',1,'']]],
-  ['fitspectrum_104',['FitSpectrum',['../classISSAutoCalibrator.html#a1f54288dd23df9c254ddb7f788b14c45',1,'ISSAutoCalibrator']]],
+  ['fitspectrum_104',['FitSpectrum',['../classISSAutoCalibrator.html#a83982ab50b63a7545401761874e1c9ac',1,'ISSAutoCalibrator']]],
   ['flag_5falive_105',['flag_alive',['../structthptr.html#aee388b2cfebeafb702c523e88ba84494',1,'thptr::flag_alive'],['../iss__sort_8cc.html#a5328d2378558c01ec007e61a8e0d100c',1,'flag_alive:&#160;iss_sort.cc']]],
   ['flag_5fasic_5fdata_106',['flag_asic_data',['../classISSConverter.html#ab6ace998484d4dcb498492a869f778e1',1,'ISSConverter']]],
   ['flag_5fasic_5fonly_107',['flag_asic_only',['../classISSSettings.html#ac8c70faf0cbbb637064b8cb71c6ff783',1,'ISSSettings']]],
@@ -166,5 +166,6 @@ var searchData=
   ['ftypes_163',['fTypes',['../classCommandLineInterface.html#adf547c0638d96fb9aa168508e2488e1f',1,'CommandLineInterface']]],
   ['fusion_20evaporation_20simulations_164',['PACE4 fusion-evaporation simulations',['../index.html#autotoc_md12',1,'']]],
   ['fvalues_165',['fValues',['../classCommandLineInterface.html#acd53867f1ddfa17f31771f3ad756d1f2',1,'CommandLineInterface']]],
-  ['fvertical_5f0_166',['fVertical_0',['../classISSGUI.html#a7a524530f47007f46f998fe02444242c',1,'ISSGUI']]]
+  ['fvertical_5f0_166',['fVertical_0',['../classISSGUI.html#a7a524530f47007f46f998fe02444242c',1,'ISSGUI']]],
+  ['fwhm_167',['fwhm',['../structSigmaResult.html#abe8737aaa7bbeb58468869bf9c1f0e65',1,'SigmaResult']]]
 ];
