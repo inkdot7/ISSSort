@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="iss_sort R222_0" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="-s $PROJECT_DIR$/../is739_analysis/config/settings.dat -c $PROJECT_DIR$/../is739_analysis/config/calibration.dat -r $PROJECT_DIR$/../is739_analysis/config/reaction_u232.dat -d $USER_HOME$/data/is739/sorted -f -i $USER_HOME$/data/is739/raw/R222_0" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ISSSort" TARGET_NAME="iss_sort" CONFIG_NAME="iss_sort" version="1" RUN_PATH="$PROJECT_DIR$/bin/iss_sort">
+    <method v="2">
+      <option name="CLION.COMPOUND.BUILD" enabled="true" />
+    </method>
+  </configuration>
+</component>
