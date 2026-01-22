@@ -526,6 +526,14 @@ float ISSCalibration::AsicWalk( unsigned int mod, unsigned int asic, float energ
 
 				}
 
+				if (fAsicWalkType[mod][asic] == 3) {
+					if (hit) {
+						walk = -walk_params[3];
+					} else {
+						double x = log10(energy);
+						walk = -(walk_params[0]*((x - walk_params[1])*(x - walk_params[1])) + walk_params[2]);
+					}
+				}
 			}
 
 		}
